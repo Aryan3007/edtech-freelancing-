@@ -5,7 +5,7 @@ import Hero from "@/components/hero";
 import PricingSection from "@/components/PricingSection";
 import Stats from "@/components/stats";
 // import OppositeScroll from "@/components/OppositeScroll";
-import TextParallaxContentExample from "@/components/TextParallaxContent";
+// import TextParallaxContentExample from "@/components/TextParallaxContent";
 // import { VelocityText } from "@/components/VelocityText";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       {/* <VelocityText/> */}
 
       <FeaturesSection />
-<TextParallaxContentExample/>
+{/* <TextParallaxContentExample/> */}
 {/* <OppositeScroll/> */}
 <BouncyCardsFeatures/>
 <PricingSection/>
