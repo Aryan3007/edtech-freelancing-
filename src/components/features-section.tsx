@@ -79,7 +79,7 @@ export default function FeaturesSection() {
     <section ref={ref} className="py-20 px-4 md:px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-left mb-16 max-w-4xl leading-tight"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 max-w-4xl mx-auto leading-tight"
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
