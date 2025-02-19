@@ -1,129 +1,155 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { motion, useAnimation, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
+import Image from "next/image"
+import Stats from "./stats"
+import Navbar from "./navbar"
 
-const AnimatedGradient = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl opacity-30 animate-blob" />
-      <div className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-pink-400 to-red-500 rounded-full blur-3xl opacity-30 animate-blob animation-delay-2000" />
-      <div className="absolute left-1/4 bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-green-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-blob animation-delay-4000" />
-    </div>
-  )
-}
 
-const DrawCircleText = () => {
-  return (
-    <span className="relative">
-      Business
-      <svg viewBox="0 0 286 73" fill="none" className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1">
-        <motion.path
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{
-            duration: 1.25,
-            ease: "easeInOut",
-          }}
-          d="M142.293 1C106.854 16.8908 6.08202 7.17705 1.23654 43.3756C-2.10604 68.3466 29.5633 73.2652 122.688 71.7518C215.814 70.2384 316.298 70.689 275.761 38.0785C230.14 1.37835 97.0503 24.4575 52.9384 1"
-          stroke="#FACC15"
-          strokeWidth="3"
-        />
-      </svg>
-    </span>
-  )
-}
+const stats = [
+  {
+    number: "503",
+    label: "Happy Customer",
+    image: "https://img.freepik.com/free-photo/abstract-building-with-sky_23-2148106883.jpg?t=st=1739982415~exp=1739986015~hmac=18aae12b05510495e13447d1cbf0681ab19cb5fcf6090e8a49f7499e7da0686a&w=740",
+    tag: "News",
+    title: "We're excited to reveal a brand new take on a Studio Set.",
+    avatar: "https://images.unsplash.com/photo-1739823602919-fc52d84b7e7e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Sarah Lee",
+  },
+  {
+    number: "6700+",
+    label: "Property Sales",
+    image: "https://img.freepik.com/free-photo/abstract-building-with-sky_23-2148106883.jpg?t=st=1739982415~exp=1739986015~hmac=18aae12b05510495e13447d1cbf0681ab19cb5fcf6090e8a49f7499e7da0686a&w=740",
+    tag: "News",
+    title: "Update: Daily Only with us you will learn the real trends.",
+    avatar: "https://images.unsplash.com/photo-1739823602919-fc52d84b7e7e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "John Smith",
+  },
+  {
+    number: "205",
+    label: "Award Winning",
+  },
+]
 
 export default function Hero() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const mainControls = useAnimation()
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible")
-    }
-  }, [isInView, mainControls])
-
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
-      <AnimatedGradient />
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 75 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial="hidden"
-          animate={mainControls}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
-          <div className="inline-block mb-4">
-            <motion.div
-              className="bg-white mb-4 backdrop-blur-md rounded-lg px-3 py-1 text-sm font-medium text-gray-700 border border-gray-200 shadow-sm"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="flex items-center">
-                <Sparkles className="w-4 h-4 mr-2 text-yellow-500" />
-                Next-Gen AI Automation
-              </span>
-            </motion.div>
-          </div>
-          <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            Scale your <DrawCircleText /> with Simple AI Tools
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            Make data-driven decisions with AI Insights. Streamline your workflow, boost productivity, and stay ahead of
-            the competition.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Request demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-gray-300 hover:border-gray-400 px-8 py-6 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              Chat with Us
-            </Button>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:pl-12 pt-4">
+
+
+        {/* Hero Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 pb-20">
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <nav className="flex items-center justify-between mb-16">
+              <Navbar />
+
+
+            </nav>
+            <div className="space-y-8 pt-8">
+              <div>
+
+                <h1 className="text-5xl md:text-6xl mb-4 lg:text-7xl leading-tight">
+                  Scale Business
+                  <br />
+                  with Simple AI Tools
+                </h1>
+                <p className="text-gray-600 text-lg max-w-lg">
+                  As a trusted best project that has been operating for 25 years, our commitment is always to prioritize
+                  our client satisfaction
+                </p>
+              </div>
+
+              {/* Achievement Cards */}
+              <div className=" grid grid-cols-1 md:grid-cols-2 gap-2">
+                {stats.slice(0, 2).map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white rounded-2xl p-4 flex items-start space-x-4"
+                  >
+                    <Image
+                      src={stat.image || "/placeholder.svg"}
+                      alt={stat.title || "Achievement"}
+                      width={100}
+                      height={100}
+                      className="rounded-xl"
+                    />
+                    <div className="space-y-2">
+                      <span className="px-3 py-1 bg-[#a2d2ff] rounded-full text-sm">{stat.tag}</span>
+                      <p className="font-medium">{stat.title}</p>
+                      <div className="flex items-center space-x-2">
+                        <Image
+                          src={stat.avatar || "/placeholder.svg"}
+                          alt="hello"
+                          width={24}
+                          height={24}
+                          className="rounded-full"
+                        />
+                        <span className="text-sm text-gray-600">{stat.name}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Statistics */}
+              <div className="">
+                <Stats />
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+
+          {/* Right Side Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative h-[calc(100vh-30px)] border rounded-3xl overflow-hidden">
+              <Image
+                src="/hero.jpg"
+                alt="Hero Image"
+                fill
+                className="object-cover"
+              />
+              {/* Best Project Badge */}
+              <div className="absolute top-4 right-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white bg-opacity-60 backdrop-blur-sm border rounded-3xl p-2 w-64 h-80 relative"
+
+                >
+                  {/* Top section with badge and title */}
+
+                  <div className="flex text-black flex-col items-start gap-3">
+
+
+                    <input type="email" placeholder="Enter your email" className="bg-gradient-to-br from-[#2f2f2f] to-[#0f0f0f] px-4 py-2 rounded-full border border-black w-full text-white" />
+                    <Button className="bg-[#a2d2ff] hover:bg-[#a2d2ff8d] text-black rounded-full">Join Waitlist</Button>
+                  </div>
+                </motion.div>
+              </div>
+              {/* Discover More Button */}
+              <motion.div className="absolute bottom-4 flex justify-center items-center right-4" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button className="bg-[#a2d2ff] hover:bg-[#a2d2ff8d] text-black rounded-full px-6">
+                  Discover More
+                </Button>
+                <ArrowUpRight className="w-full p-1.5 rounded-full bg-[#a2d2ff] h-full ml-2" />
+
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        
-      </motion.div>
-    </section>
+    </div>
   )
 }
 

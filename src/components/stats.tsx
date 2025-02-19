@@ -61,17 +61,9 @@ export default function Stats() {
   const isInView = useInView(containerRef, { once: true })
 
   return (
-    <section ref={containerRef} className="py-24 px-4 md:px-6 bg-white">
+    <section ref={containerRef} className=" px-4 md:px-6">
       <div className="max-w-5xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-3xl md:text-xl font-bold mb-16 max-w-3xl mx-auto leading-tight"
-        >
-          <span className="text-indigo-900">BUILD TRUST WITH YOUR USERS WITH A </span>
-          <span className="text-indigo-500">BEAUTIFUL LANDING PAGE</span>
-        </motion.h2>
+       
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           {stats.map((stat, index) => (
@@ -81,10 +73,10 @@ export default function Stats() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-5xl md:text-6xl font-bold mb-4">
+              <div className="text-5xl md:text-2xl font-bold mb-4">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <p className="text-gray-600 text-lg">{stat.description}</p>
+              <p className="text-gray-600 text-xs">{stat.description}</p>
             </motion.div>
           ))}
         </div>

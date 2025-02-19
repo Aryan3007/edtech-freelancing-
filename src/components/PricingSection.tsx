@@ -60,12 +60,7 @@ const pricingPlans = [
 export default function PricingSection() {
   return (
     <section className="py-24  relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-4 -top-4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -right-4 -bottom-4 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl" />
-      </div>
-
+     
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
           <motion.div

@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { Database, GitBranch, Package, Smartphone, Cpu, MousePointer, Heart, ArrowRightLeft } from 'lucide-react'
 import { useRef } from "react"
+import { motion, useScroll } from "framer-motion"
+import { ArrowRightLeft, Cpu, Database, GitBranch, Heart, MousePointer, Package, Smartphone } from "lucide-react"
 
 const features = [
   {
@@ -20,94 +21,79 @@ const features = [
     title: "No API Needed",
     description: "Automate legacy systems like SAP without requiring APIs.",
   },
-  {
-    icon: Smartphone,
-    title: "User-Friendly Orchestration Platform",
-    description: "Built for users with no engineering background.",
-  },
-  {
-    icon: Cpu,
-    title: "AI & ML Integration",
-    description: "Open-source AI and ML integration with no need for specialized engineers.",
-  },
-  {
-    icon: MousePointer,
-    title: "One-Click Server Deployment",
-    description: "Deploy and manage automation servers with a single click.",
-  },
-  {
-    icon: Heart,
-    title: "Compliance Ready",
-    description: "SOC I, SOC II, GDPR, HIPAA compliant, with third-party audits.",
-  },
-  {
-    icon: ArrowRightLeft,
-    title: "Scalable",
-    description: "Built to grow with your needs.",
-  },
+  
+
 ]
 
 export default function FeaturesSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: -20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  }
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  })
 
   return (
-    <section ref={ref} className="py-20 px-4 md:px-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center mb-16 max-w-4xl mx-auto leading-tight"
-          initial={{ opacity: 0, y: -20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-        >
-          We help you build complex automations in the simplest way.
-        </motion.h2>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white rounded-2xl p-6 shadow-sm border transition-shadow"
+    <section className=" text-black py-8">
+      <div ref={containerRef} className="max-w-7xl mx-auto flex flex-col items-start justify-between md:flex-row mb-12 md:my-24">
+        {/* Left sticky content */}
+        <div className="flex flex-col w-full sticky md:top-36 lg:w-1/2 mt-2 md:mt-12 px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <p className="text-blue-500 uppercase tracking-loose">Our Process</p>
+            <p className="text-3xl md:text-4xl leading-normal font-bold md:leading-relaxed mb-2">
+              How We Transform Your Business
+            </p>
+            <p className="text-sm md:text-base text-gray-700 mb-4">
+              Discover how our AI-powered platform can revolutionize your workflow and boost productivity across your
+              organization.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className=" text-sm bg-[#a2d2ff] text-[#000000] rounded-full py-2 px-4  transition-all duration-300"
             >
-              <div className="w-12 h-12 mb-4 text-blue-500">
-                <feature.icon className="w-full h-full" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+              Explore Now
+            </motion.button>
+          </motion.div>
+        </div>
+
+
+        <div className="ml-0 md:ml-12 lg:w-1/2 sticky">
+          <div className=" w-full h-full">
+            <div className="relative wrap overflow-hidden p-4 h-full">
+
+              {/* Feature cards */}
+              {features.map((feature, index) => {
+
+                const Icon = feature.icon
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2, delay: index * 0.2 }}
+                    className={`mb-8 flex justify-between  items-center w-full`}
+                  >
+
+                    <div className={`order-1 w-full px-1 py-4 text-left`}>
+                      <div className="bg-white border h-80 rounded-xl p-6">
+                        <div className={`flex items-center justify-start mb-4`}>
+                          <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center">
+                            <Icon className="w-6 h-6 text-blue-500" />
+                          </div>
+                        </div>
+                        <h4 className="mb-3 font-bold text-lg md:text-2xl">{feature.title}</h4>
+                        <p className="text-sm md:text-base leading-snug text-gray-800">{feature.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
 }
+

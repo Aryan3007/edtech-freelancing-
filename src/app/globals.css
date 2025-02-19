@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9fafb;
 }
 
 
@@ -21,7 +22,7 @@ body {
 
 /* Handle (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #4a90e2, #1455e2);
+  background: linear-gradient(135deg, #4a90e2, #a2d2ff);
   border-radius: 10px;
   cursor: pointer;
 }
