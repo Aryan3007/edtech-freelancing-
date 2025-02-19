@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import { motion } from "framer-motion"
@@ -72,7 +71,7 @@ export default function PricingSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
               Simple, transparent pricing
             </h2>
-            <p className="text-xl text-gray-600">Choose the plan that's right for you</p>
+            <p className="text-xl text-gray-600">Choose the plan thats right for you</p>
           </motion.div>
         </div>
 

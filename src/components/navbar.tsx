@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className={`p-2 rounded-full bg-black w-fit px-4 uppercase  text-white text-center ${isScrolled ? "md:flex" : "hidden"} gap-2`}><h1>Flokana</h1></div>
 
-          <div className="hidden mx-2 bg-black py-2 px-2 rounded-full h-fit md:block">
+          <div className="hidden mx-2 bg-black py-2.5 px-2 rounded-full h-fit md:block">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}

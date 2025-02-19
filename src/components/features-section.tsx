@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useRef } from "react"
-import { motion, useScroll } from "framer-motion"
+import { motion } from "framer-motion"
 import { Database, GitBranch, Package } from "lucide-react"
 
 const features = [

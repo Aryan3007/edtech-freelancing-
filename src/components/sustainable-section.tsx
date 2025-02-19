@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { Instagram, Play, Share2 } from "lucide-react"
 import { useEffect, useRef } from "react"
 
@@ -105,7 +103,7 @@ export default function SustainableSection() {
             <div className="flex flex-wrap justify-center gap-2">
               {tags.map((tag, index) => (
                 <motion.span
-                  key={tag}
+                  key={index}
                   variants={itemVariants}
                   className="px-4 py-2 rounded-full text-sm bg-white text-blue-600"
                 >
