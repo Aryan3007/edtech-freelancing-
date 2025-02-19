@@ -31,7 +31,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full lg:w-1/2 pt- right-0 z-50 transition-all duration-300 ${isScrolled ? " lg:w-full top-2" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full lg:w-1/2 hidden md:block pt- right-0 z-50 transition-all duration-300 ${isScrolled ? " lg:w-full top-2" : "bg-transparent"
         }`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className={`p-2 rounded-full bg-black w-fit px-4 uppercase text-white text-center ${isScrolled ? "flex" : "hidden"} gap-2`}><h1>Flokana</h1></div>
+          <div className={`p-2 rounded-full bg-black w-fit px-4 uppercase  text-white text-center ${isScrolled ? "md:flex" : "hidden"} gap-2`}><h1>Flokana</h1></div>
 
           <div className="hidden mx-2 bg-black py-2 px-2 rounded-full h-fit md:block">
             <motion.div
