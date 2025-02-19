@@ -88,7 +88,7 @@ export default function Hero() {
                           alt="hello"
                           width={24}
                           height={24}
-                          className="rounded-full"
+                          className="rounded-full h-10 w-10"
                         />
                         <span className="text-sm text-gray-600">{stat.name}</span>
                       </div>

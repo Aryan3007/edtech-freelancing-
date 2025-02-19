@@ -18,16 +18,16 @@ export default function Home() {
 
 
       <Hero />
-      <SustainableSection/>
+      <SustainableSection />
       {/* <VelocityText/> */}
-<StickyScroll/>
+      <StickyScroll />
       {/* <FeaturesSection /> */}
-      <TextParallaxContentExample/>
+      <TextParallaxContentExample />
       {/* <OppositeScroll/> */}
       {/* <BouncyCardsFeatures /> */}
       <PricingSection />
       <FAQ />
-      <Footer/>
+      <Footer />
     </main>
   )
 }

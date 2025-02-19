@@ -2,9 +2,8 @@
 
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Instagram, Linkedin, Youtube } from "lucide-react"
-import { Twitter } from "lucide-react"
 import Link from "next/link"
+import { FiInstagram, FiLinkedin, FiTwitter, FiYoutube } from "react-icons/fi"
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -36,27 +35,27 @@ export default function Footer() {
             <div className="flex space-x-4">
               <Link
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <FiTwitter className="w-5 h-5" />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white transition-colors"
               >
-                <Instagram className="w-5 h-5" />
+                <FiInstagram className="w-5 h-5" />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
+                <FiLinkedin className="w-5 h-5" />
               </Link>
               <Link
                 href="#"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white transition-colors"
               >
-                <Youtube className="w-5 h-5" />
+                <FiYoutube className="w-5 h-5" />
               </Link>
             </div>
           </div>

@@ -3,7 +3,7 @@
 
 import { useRef } from "react"
 import { motion, useScroll } from "framer-motion"
-import { ArrowRightLeft, Cpu, Database, GitBranch, Heart, MousePointer, Package, Smartphone } from "lucide-react"
+import { Database, GitBranch, Package } from "lucide-react"
 
 const features = [
   {
@@ -27,10 +27,6 @@ const features = [
 
 export default function FeaturesSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  })
 
   return (
     <section className=" text-black py-8">
