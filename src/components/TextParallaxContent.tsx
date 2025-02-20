@@ -110,9 +110,13 @@ const ExampleContent: React.FC = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium reiciendis blanditiis aliquam aut fugit
         sint.
       </p>
-      <button className="w-full rounded bg-neutral-900 px-4 py-2 text-white transition-colors hover:bg-neutral-700 md:w-fit">
-        Learn more <FiArrowUpRight className="inline" />
+      <div className="flex justify-start items-center gap-1">
+
+      <button className="w-full rounded-full bg-neutral-900 px-4 py-2 text-white transition-colors hover:bg-neutral-700 md:w-fit">
+        Learn more 
       </button>
+      <FiArrowUpRight className="inline rounded-full text-white h-10 p-2 w-10 bg-black" />
+      </div>
     </div>
   </div>
 )

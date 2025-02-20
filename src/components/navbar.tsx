@@ -31,12 +31,12 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full lg:w-1/2 hidden md:block pt- right-0 z-50 transition-all duration-300 ${isScrolled ? " lg:w-full top-2" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full lg:w-1/2 md:block pt- right-0 z-50 transition-all duration-300 ${isScrolled ? "lg:bg-transparent bg-white lg:w-full lg:top-2" : "bg-transparent"
         }`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
-        <div className={`${isScrolled ? "justify-center" : "justify-between"} flex items-center h-16`}>
-          <motion.div
+        <div className={`${isScrolled ? " justify-between lg:justify-center" : "justify-between"} flex items-center h-16`}>
+          {/* <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -44,13 +44,15 @@ const Navbar = () => {
           >
             <Link
               href="/"
-              className={` ${isScrolled ? "hidden" : ""} text-xl uppercase font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent hover:from-gray-600 hover:to-gray-800 transition-all duration-300`}>
+              className={` ${isScrolled ? "md:hidden flex" : ""} text-xl uppercase font-semibold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent hover:from-gray-600 hover:to-gray-800 transition-all duration-300`}>
               Flokana
             </Link>
-          </motion.div>
+          </motion.div> */}
 
           {/* Desktop Menu */}
-          <div className={`p-2 rounded-full bg-black w-fit px-4 uppercase  text-white text-center ${isScrolled ? "md:flex" : "hidden"} gap-2`}><h1>Flokana</h1></div>
+          <motion.div initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }} className={`p-2 rounded-full bg-transparent w-fit px-4 uppercase  text-black  text-center ${isScrolled ? "flex lg:bg-black lg:text-white" : ""} gap-2`}><h1>Flokana</h1></motion.div>
 
           <div className="hidden mx-2 bg-black py-2.5 px-2 rounded-full h-fit md:block">
             <motion.div
@@ -87,7 +89,7 @@ const Navbar = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={`${isScrolled ? "" : "md:flex"}`}
+            className={`${isScrolled ? "hidden lg:flex" : "md:flex"}`}
           >
 
             <motion.div className="flex gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

@@ -107,7 +107,7 @@ export default function Hero() {
           {/* Right Side Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1, x:0 }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
@@ -124,7 +124,7 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-white bg-opacity-60 backdrop-blur-sm border rounded-3xl p-2 w-64 h-80 relative"
+                  className="bg-white bg-opacity-60 backdrop-blur-sm border rounded-3xl p-2 flex flex-col items-center lg:w-64 h-80 relative"
 
                 >
                   {/* Top section with badge and title */}

@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { motion, useInView } from "framer-motion"
 import { Instagram, Play, Share2 } from "lucide-react"
 import { useEffect, useRef } from "react"
+import FallingText from "./ui/FallingText"
 
 const tags = ["Environmental", "Sustainable", "Green", "Eco-friendly", "Recycling", "Forward-thinking"]
 
@@ -55,9 +57,9 @@ export default function SustainableSection() {
         <div className="grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto gap-8">
           {/* Left Column */}
           <motion.div
-           initial={{ opacity: 0, scale:0.2 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             variants={itemVariants}
             className="relative col-span-1 rounded-2xl overflow-hidden aspect-square bg-[#90EE90]/10"
           >
@@ -98,27 +100,26 @@ export default function SustainableSection() {
           {/* Center Column */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col bg-[#d0e8ff] rounded-2xl col-span-2 items-center justify-center p-6"
+            className="flex flex-col bg-[#d0e8ff] h-72 rounded-2xl col-span-2 items-center justify-center p-6"
           >
-            <div className="flex flex-wrap justify-center gap-2">
-              {tags.map((tag, index) => (
-                <motion.span
-                  key={index}
-                  variants={itemVariants}
-                  className="px-4 py-2 rounded-full text-sm bg-white text-blue-600"
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </div>
-           
+            <FallingText
+              text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
+              highlightWords={["React", "Bits", "animated", "components", "simplify"]}
+              trigger="scroll"
+              backgroundColor="transparent"
+              wireframes={false}
+              gravity={0.56}
+              fontSize="1rem"
+              mouseConstraintStiffness={0.9}
+            />
+
           </motion.div>
 
           {/* Right Column */}
           <motion.div
-           initial={{ opacity: 0, scale:0.2 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
             variants={itemVariants}
             className="relative col-span-1 rounded-2xl overflow-hidden aspect-square bg-[#90EE90]/10"
           >
