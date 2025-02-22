@@ -36,7 +36,7 @@ export default function SustainableSection() {
   }
 
   return (
-    <section ref={sectionRef} className="px-4">
+    <section ref={sectionRef} className="px-4 py-24">
       <motion.div
         variants={containerVariants}
         initial="hidden"
