@@ -146,7 +146,7 @@ export default function TestimonialCarousel() {
                           </div>
 
                           {/* Review Text */}
-                          <blockquote className="text-gray-700 text-lg mb-4 italic">"{testimonial.review}"</blockquote>
+                          <blockquote className="text-gray-700 text-lg mb-4 italic">{testimonial.review}</blockquote>
 
                           {/* Author Info */}
                           <div>
