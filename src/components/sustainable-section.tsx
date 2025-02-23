@@ -105,7 +105,7 @@ export default function SustainableSection() {
             <FallingText
               text={`React Bits is a library of animated and interactive React components designed to streamline UI development and simplify your workflow.`}
               highlightWords={["React", "Bits", "animated", "components", "simplify"]}
-              trigger="scroll"
+              trigger="hover"
               backgroundColor="transparent"
               wireframes={false}
               gravity={0.56}

@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { FiMenu } from "react-icons/fi"
 import { Button } from "@/components/ui/button"
 import { MobileMenu } from "@/components/mobile-menu"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
+import { FiMenu } from "react-icons/fi"
+import Header from "./header"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -29,11 +30,13 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
+        }`}
     >
+      <Header />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="flex items-center justify-between h-16">
           {/* Logo/Company Name */}
           <motion.div

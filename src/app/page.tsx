@@ -5,7 +5,9 @@ import PricingSection from "@/components/PricingSection";
 import StickyScroll from "@/components/StickyScroll";
 import SurfCarousel from "@/components/testimonial-carousel";
 import SustainableSection from "@/components/sustainable-section";
-import TextParallaxContentExample from "@/components/TextParallaxContent";
+import OpeningScreen from "@/components/opening-screen";
+import VerticalAccordion from "@/components/VerticalAccordion";
+// import TextParallaxContentExample from "@/components/TextParallaxContent";
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
       <Hero />
       <SustainableSection />
       <StickyScroll />
-      <TextParallaxContentExample />
+      <OpeningScreen/>
+      <VerticalAccordion/>
+      {/* <TextParallaxContentExample /> */}
   
       <PricingSection />
       <SurfCarousel/>

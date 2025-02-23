@@ -1,55 +1,109 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { useState, useCallback, useEffect } from "react"
 
-const testimonials = [
+const courses = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Creative Director",
+    title: "First Touch",
+    price: 1350,
+    hours: 150,
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    rating: 5,
-    review:
-      "The attention to detail and the quality of service exceeded my expectations. The team went above and beyond to ensure everything was perfect. I couldn't be happier with the results!",
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Tech Entrepreneur",
+    title: "Let's Get Wet",
+    price: 1675,
+    hours: 220,
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    rating: 5,
-    review:
-      "Working with this team has been an absolute pleasure. Their innovative approach and dedication to excellence have truly transformed our project into something extraordinary.",
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
   },
   {
     id: 3,
-    name: "Emma Davis",
-    role: "Marketing Manager",
+    title: "Basic Surf",
+    price: 925,
+    hours: 70,
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3",
-    rating: 5,
-    review:
-      "I'm thoroughly impressed by the professionalism and creativity shown throughout our collaboration. The results speak for themselves - simply outstanding!",
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
+  },  {
+    id: 4,
+    title: "First Touch",
+    price: 1350,
+    hours: 150,
+    image:
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
+  },
+  {
+    id: 5,
+    title: "Let's Get Wet",
+    price: 1675,
+    hours: 220,
+    image:
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
+  },
+  {
+    id: 6,
+    title: "Basic Surf",
+    price: 925,
+    hours: 70,
+    image:
+      "https://images.unsplash.com/photo-1515405295579-ba7b45403062?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    instructor: {
+      name: "Jonathan Hope",
+      avatar:
+        "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      location: "Yogyakarta",
+    },
   },
 ]
 
-export default function TestimonialCarousel() {
+export default function SurfCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
     containScroll: "trimSnaps",
+  
   })
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [selectedIndex, setSelectedIndex] = useState(2)
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -71,14 +125,14 @@ export default function TestimonialCarousel() {
     onSelect()
     emblaApi.on("select", onSelect)
 
-    // Auto-scroll
+    // Start autoplay
     const autoplay = setInterval(() => {
       if (emblaApi.canScrollNext()) {
         emblaApi.scrollNext()
       } else {
         emblaApi.scrollTo(0)
       }
-    }, 5000)
+    }, 4000)
 
     return () => {
       clearInterval(autoplay)
@@ -87,71 +141,53 @@ export default function TestimonialCarousel() {
   }, [emblaApi, onSelect])
 
   return (
-    <div className=" py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
-            What Our Clients Say
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Discover why clients choose us and trust our expertise for their needs.
-          </p>
-        </div>
-
+    <div className="min-h-screen text-black py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative text-white">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               <AnimatePresence mode="wait">
-                {testimonials.map((testimonial, index) => (
+                {courses.map((course, index) => (
                   <motion.div
-                    key={testimonial.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    key={course.id}
+                    initial={{ opacity: 0, scale: 0.8 }}
                     animate={{
                       opacity: selectedIndex === index ? 1 : 0.5,
-                      scale: selectedIndex === index ? 1 : 0.9,
+                      scale: selectedIndex === index ? 1 : 0.8,
+                      rotateY: selectedIndex === index ? 0 : 15,
                     }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.5 }}
-                    className="flex-[0_0_100%] min-w-0 h-full px-4 md:flex-[0_0_80%] lg:flex-[0_0_60%]"
+                    className="flex-[0_0_80%] max-w-lg mx-auto px-4"
                   >
-                    <div className="bg-white rounded-2xl p-8 relative">
-                      {/* Quote Icon */}
-                      <div className="absolute top-0 -left-4 w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center">
-                        <Quote className="w-4 h-4 text-white" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex flex-col md:flex-row gap-8 items-center">
-                        {/* Profile Image */}
-                        <div className="relative w-24 h-24 md:w-32 md:h-32">
-                          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-600 rounded-full transform -rotate-6" />
-                          <Image
-                            src={testimonial.image || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            width={128}
-                            height={128}
-                            className="rounded-full object-cover w-full h-full relative transform rotate-3 transition-transform duration-300 hover:rotate-0"
-                          />
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
+                      <Image
+                        src={course.image || "/placeholder.svg"}
+                        alt={course.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60" />
+                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        <div>
+                          <div className="text-sm mb-1">USD{course.price}</div>
+                          <div className="text-sm text-gray-300">{course.hours} hours</div>
                         </div>
-
-                        {/* Review Content */}
-                        <div className="flex-1 text-center md:text-left">
-                          {/* Rating */}
-                          <div className="flex justify-center md:justify-start gap-1 mb-4">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                            ))}
-                          </div>
-
-                          {/* Review Text */}
-                          <blockquote className="text-gray-700 text-lg mb-4 italic">{testimonial.review}</blockquote>
-
-                          {/* Author Info */}
-                          <div>
-                            <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                            <div className="text-gray-600 text-sm">{testimonial.role}</div>
+                        <div className="bg-white border rounded-lg backdrop-blur-sm bg-opacity-60 text-black p-4">
+                          <h3 className="text-2xl font-bold mb-4">{course.title}</h3>
+                          <div className="flex items-center space-x-3">
+                            <Image
+                              src={course.instructor.avatar || "/placeholder.svg"}
+                              alt={course.instructor.name}
+                              width={40}
+                              height={40}
+                              className="rounded-full h-12 w-12"
+                            />
+                            <div>
+                              <div className="text-sm font-medium">{course.instructor.name}</div>
+                              <div className="text-sm text-gray-900">{course.instructor.location}</div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -169,18 +205,18 @@ export default function TestimonialCarousel() {
               size="icon"
               onClick={scrollPrev}
               disabled={!prevBtnEnabled}
-              className="rounded-full h-12 w-12 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-200"
+              className="rounded-full h-16 w-16 bg-[#000000] hover:bg-black shadow-lg hover:text-white hover:scale-95 duration-200 transition-all text-[#ffffff]"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="text-2xl" />
             </Button>
             <Button
               variant="outline"
               size="icon"
               onClick={scrollNext}
               disabled={!nextBtnEnabled}
-              className="rounded-full h-12 w-12 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-200"
+              className="rounded-full h-16 w-16 bg-[#000000] hover:bg-black shadow-lg hover:text-white hover:scale-95 duration-200 transition-all text-[#ffffff]"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="text-2xl" />
             </Button>
           </div>
         </div>

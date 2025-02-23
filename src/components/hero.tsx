@@ -48,7 +48,7 @@ export default function Hero() {
   }, [isInView, mainControls])
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
+    <section ref={ref} className="relative min-h-screen py-28 flex items-center justify-center overflow-hidden bg-gray-50">
       <AnimatedGradient />
       <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
