@@ -166,8 +166,8 @@ const VerticalAccordion = () => {
                 animate={{ y: activeItem === item.id ? 0 : 20, opacity: activeItem === item.id ? 1 : 0 }}
                 transition={{ delay: 0.4 }}
                 className={`
-                  mt-6 lg:mt-8 px-4 lg:px-6 py-2 rounded-full border-2 ${item.textColor} border-current
-                  hover:bg-white hover:text-gray-900 transition-colors duration-300 text-sm lg:text-base
+                  mt-6 lg:mt-8 px-4 lg:px-6 py-2 rounded-full border-2  border-current
+                  bg-white hover:scale-95 transition-all text-gray-900  duration-300 text-sm lg:text-base
                   ${activeItem === item.id ? "block" : "hidden"}
                 `}
               >

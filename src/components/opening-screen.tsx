@@ -86,7 +86,7 @@ export default function OpeningScreen() {
               <div className={`absolute inset-0 bg-gradient-to-r ${tab.color}`} />
 
               {/* Content */}
-              <div className="relative h-full p-8 flex flex-col justify-between">
+              <div className="relative h-full p-8 flex flex-col justify-evenly">
                 <div className="flex items-center gap-4">
                   <motion.div className={`flex-shrink-0 w-12 h-12 rounded-full bg-white/20`} />
                   <h3 className="text-xl font-medium text-white">{tab.label}</h3>
@@ -95,6 +95,8 @@ export default function OpeningScreen() {
                 <div className="mt-auto">
                   <p className="text-white/80 text-sm line-clamp-3">{tab.content.description}</p>
                 </div>
+
+                <button className="bg-white my-4 w-fit px-4 text-sm p-2 rounded-full">Learn more...</button>
               </div>
             </motion.button>
           ))}
@@ -203,10 +205,10 @@ export default function OpeningScreen() {
 
                             {/* Decorative elements */}
                             <div
-                              className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${tab.color} rounded-full opacity-20`}
+                              className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${tab.color} rounded-full opacity-50`}
                             />
                             <div
-                              className={`absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br ${tab.color} rounded-full opacity-20`}
+                              className={`absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br ${tab.color} rounded-full opacity-80`}
                             />
                           </motion.div>
                         </div>

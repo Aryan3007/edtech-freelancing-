@@ -95,7 +95,7 @@ const courses = [
 
 export default function SurfCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
+    loop: false,
     align: "center",
     containScroll: "trimSnaps",
   
@@ -103,7 +103,7 @@ export default function SurfCarousel() {
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
-  const [selectedIndex, setSelectedIndex] = useState(2)
+  const [selectedIndex, setSelectedIndex] = useState(1)
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -130,9 +130,9 @@ export default function SurfCarousel() {
       if (emblaApi.canScrollNext()) {
         emblaApi.scrollNext()
       } else {
-        emblaApi.scrollTo(0)
+        emblaApi.scrollTo(1)
       }
-    }, 4000)
+    }, 4000000)
 
     return () => {
       clearInterval(autoplay)
@@ -142,7 +142,7 @@ export default function SurfCarousel() {
 
   return (
     <div className="min-h-screen text-black py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Carousel */}
         <div className="relative text-white">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -159,9 +159,9 @@ export default function SurfCarousel() {
                     }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.5 }}
-                    className="flex-[0_0_80%] max-w-lg mx-auto px-4"
+                    className="flex-[0_0_80%] max-w-lg mx-auto lg:px-4"
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
+                    <div className="relative aspect-[3/4] lg:aspect-[4/5] overflow-hidden rounded-3xl">
                       <Image
                         src={course.image || "/placeholder.svg"}
                         alt={course.title}
@@ -174,7 +174,7 @@ export default function SurfCarousel() {
                           <div className="text-sm mb-1">USD{course.price}</div>
                           <div className="text-sm text-gray-300">{course.hours} hours</div>
                         </div>
-                        <div className="bg-white border rounded-lg backdrop-blur-sm bg-opacity-60 text-black p-4">
+                        <div className="bg-white border rounded-lg backdrop-blur-sm bg-opacity-60 h-80 text-black p-4">
                           <h3 className="text-2xl font-bold mb-4">{course.title}</h3>
                           <div className="flex items-center space-x-3">
                             <Image
