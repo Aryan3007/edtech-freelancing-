@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { MobileMenu } from "@/components/mobile-menu"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { FiMenu } from "react-icons/fi"
-import Header from "./header"
+// import Header from "./header"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
