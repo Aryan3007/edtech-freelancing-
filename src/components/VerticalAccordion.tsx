@@ -1,191 +1,185 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { FiBarChart, FiBell, FiDollarSign, FiPlay } from "react-icons/fi"
-import type { IconType } from "react-icons"
+import { motion } from "framer-motion"
+import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 
-interface Item {
-  id: number
-  title: string
-  Icon: IconType
-  imgSrc: string
-  description: string
-}
-
-interface PanelProps {
-  open: number
-  setOpen: (id: number) => void
-  id: number
-  Icon: IconType
-  title: string
-  imgSrc: string
-  description: string
-}
-
-// Custom hook for window size
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState<{ width: number | null }>({
-    width: null,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({ width: window.innerWidth });
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", handleResize);
-      handleResize();
-    }
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
-};
-
-
-const items: Item[] = [
+const items = [
+  {
+    id: 0,
+    title: "SCIENCE",
+    color: "bg-red-500",
+    hoverColor: "group-hover:bg-red-600",
+    textColor: "text-red-50",
+    image: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?q=80&w=2071&auto=format&fit=crop",
+    description: "Master mathematics from basic arithmetic to advanced calculus with our comprehensive program.",
+    features: [
+      "Personalized learning path",
+      "Daily practice worksheets",
+      "Regular assessments",
+      "Problem-solving skills",
+    ],
+  },
   {
     id: 1,
-    title: "Learning at the 'just-right' level",
-    Icon: FiDollarSign,
-    imgSrc:
-      "https://images.unsplash.com/photo-1597773150796-e5c14ebecbf5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "ENGLISH",
+    color: "bg-blue-500",
+    hoverColor: "group-hover:bg-blue-600",
+    textColor: "text-blue-50",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
+    description: "Develop strong reading, writing, and communication skills through our proven methodology.",
+    features: ["Reading comprehension", "Writing exercises", "Vocabulary building", "Grammar mastery"],
   },
   {
     id: 2,
-    title: "Self-learning",
-    Icon: FiPlay,
-    imgSrc:
-      "https://images.unsplash.com/photo-1598557470924-a2979fcdf017?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "SCIENCE",
+    color: "bg-emerald-500",
+    hoverColor: "group-hover:bg-emerald-600",
+    textColor: "text-emerald-50",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop",
+    description: "Explore the wonders of science through hands-on experiments and engaging lessons.",
+    features: ["Interactive experiments", "Scientific concepts", "Lab work", "Research projects"],
   },
   {
     id: 3,
-    title: "The Kumon worksheets",
-    Icon: FiBell,
-    imgSrc:
-      "https://images.unsplash.com/photo-1593462475357-67ac85ec71a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
-  },
-  {
-    id: 4,
-    title: "Kumon Instructors",
-    Icon: FiBarChart,
-    imgSrc:
-      "https://images.unsplash.com/photo-1598557404270-41cf2d95b9c9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.",
+    title: "CODING",
+    color: "bg-violet-500",
+    hoverColor: "group-hover:bg-violet-600",
+    textColor: "text-violet-50",
+    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2031&auto=format&fit=crop",
+    description: "Learn programming fundamentals and build real-world applications.",
+    features: ["Basic programming", "Web development", "App creation", "Problem solving"],
   },
 ]
 
-const panelVariants = {
-  open: {
-    width: "100%",
-    height: "100%",
-  },
-  closed: {
-    width: "0%",
-    height: "100%",
-  },
-}
+const VerticalAccordion = () => {
+  const [activeItem, setActiveItem] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-const panelVariantsSm = {
-  open: {
-    width: "100%",
-    height: "200px",
-  },
-  closed: {
-    width: "100%",
-    height: "0px",
-  },
-}
+  useEffect(() => {
+    let interval: NodeJS.Timeout
 
-const descriptionVariants = {
-  open: {
-    opacity: 1,
-    y: "0%",
-    transition: {
-      delay: 0.125,
-    },
-  },
-  closed: { opacity: 0, y: "100%" },
-}
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setActiveItem((prev) => (prev + 1) % items.length)
+      }, 5000)
+    }
 
-const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }: PanelProps) => {
-  const { width } = useWindowSize()
-  const isOpen = open === id
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [isAutoPlaying])
+
+  const handleMouseEnter = (id: number) => {
+    setIsAutoPlaying(false)
+    setActiveItem(id)
+  }
+
+  const handleMouseLeave = () => {
+    setIsAutoPlaying(true)
+  }
 
   return (
-    <>
-      <button
-        className="max-w-7xl mx-auto bg-white hover:bg-slate-50 transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group"
-        onClick={() => setOpen(id)}
-      >
-        <span
-          style={{
-            writingMode: "vertical-lr",
-          }}
-          className="hidden lg:block text-xl font-light rotate-180"
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 justify-center min-h-screen p-2">
+      {items.map((item) => (
+        <div
+          key={item.id}
+          className={`group flex flex-col items-center justify-center
+            ${
+              activeItem === item.id
+                ? "lg:w-[800px] h-[400px] md:h-[500px] lg:h-[600px]"
+                : "lg:w-28 h-24 md:h-28 lg:h-[600px]"
+            } 
+            w-full rounded-2xl lg:rounded-3xl duration-500 transition-all relative overflow-hidden ${item.color}
+            hover:shadow-2xl cursor-pointer`}
+          onMouseEnter={() => handleMouseEnter(item.id)}
+          onMouseLeave={handleMouseLeave}
         >
-          {title}
-        </span>
-        <span className="block lg:hidden text-xl font-light">{title}</span>
-        <div className="w-6 lg:w-full aspect-square bg-indigo-600 text-white grid place-items-center">
-          <Icon />
-        </div>
-        <span className="w-4 h-4 bg-white group-hover:bg-slate-50 transition-colors border-r-[1px] border-b-[1px] lg:border-b-0 lg:border-t-[1px] border-slate-200 rotate-45 absolute bottom-0 lg:bottom-[50%] right-[50%] lg:right-0 translate-y-[50%] translate-x-[50%] z-20" />
-      </button>
+          {/* Background Image with Overlay */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-500
+            ${activeItem === item.id ? "opacity-100" : "opacity-0"}`}
+          >
+            <Image
+              src={item.image || "/placeholder.svg"}
+              alt={item.title}
+              fill
+              className="object-cover"
+              priority={item.id === 0}
+            />
+            <div className={`absolute inset-0 bg-gradient-to-b from-black/60 to-transparent`} />
+          </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-          key={`panel-${id}`}
-          variants={width && width > 1024 ? panelVariants : panelVariantsSm}
-          initial="closed"
-          animate="open"
-          exit="closed"
-          style={{
-            backgroundImage: `url(${imgSrc || "/placeholder.jpg"})`, // Provide a default
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
-          className="w-full h-full overflow-hidden relative bg-black flex items-end"
-        >
-        
-            <motion.div
-              variants={descriptionVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="px-4 py-2 bg-black/40 backdrop-blur-sm text-white"
+          {/* Content Container */}
+          <div className="relative w-full h-full flex flex-col">
+            {/* Title - Different positioning for mobile and desktop */}
+            <h1
+              className={`
+                absolute transition-all duration-500 font-bold tracking-wider ${item.textColor}
+                ${
+                  activeItem === item.id
+                    ? "lg:left-10 lg:top-10 lg:text-4xl text-2xl left-6 top-6"
+                    : "lg:-rotate-90 lg:left-1 lg:top-1/2 lg:-translate-y-1/2 lg:text-3xl text-xl left-6 top-1/2 -translate-y-1/2"
+                }
+              `}
             >
-              <p>{description}</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+              {item.title}
+            </h1>
+
+            {/* Content - Only visible when active */}
+            <div
+              className={`
+                transition-all duration-500 delay-200 absolute 
+                ${activeItem === item.id ? "opacity-100" : "opacity-0"}
+                lg:top-32 lg:left-10 lg:right-10
+                top-20 left-6 right-6
+              `}
+            >
+              <p
+                className={`text-base lg:text-lg font-medium mb-4 lg:mb-6 ${item.textColor}
+                ${activeItem === item.id ? "block" : "hidden"}`}
+              >
+                {item.description}
+              </p>
+
+              <div className="space-y-2 lg:space-y-4">
+                {item.features.map((feature, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: activeItem === item.id ? 0 : -20, opacity: activeItem === item.id ? 1 : 0 }}
+                    transition={{ delay: 0.1 * idx }}
+                    className={`flex items-center gap-2 lg:gap-3
+                      ${activeItem === item.id ? "block" : "hidden"}`}
+                  >
+                    <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 ${item.textColor}`} />
+                    <span className={`${item.textColor} text-sm lg:text-base`}>{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.button
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: activeItem === item.id ? 0 : 20, opacity: activeItem === item.id ? 1 : 0 }}
+                transition={{ delay: 0.4 }}
+                className={`
+                  mt-6 lg:mt-8 px-4 lg:px-6 py-2 rounded-full border-2 ${item.textColor} border-current
+                  hover:bg-white hover:text-gray-900 transition-colors duration-300 text-sm lg:text-base
+                  ${activeItem === item.id ? "block" : "hidden"}
+                `}
+              >
+                Learn More
+              </motion.button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   )
 }
 
-export default function VerticalAccordion() {
-  const [open, setOpen] = useState<number>(items[0].id)
-
-  return (
-    <section className="p-4 ">
-      <div className="flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden">
-        {items.map((item) => (
-  <Panel key={item.id} open={open} setOpen={setOpen} {...item} />
-))}
-      </div>
-    </section>
-  )
-}
+export default VerticalAccordion
 

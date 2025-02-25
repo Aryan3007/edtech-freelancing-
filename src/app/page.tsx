@@ -15,6 +15,7 @@ export default function Home() {
 
 
       <Hero />
+      
       <SustainableSection />
       <StickyScroll />
       <OpeningScreen/>
