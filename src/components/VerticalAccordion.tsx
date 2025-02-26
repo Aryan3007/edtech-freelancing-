@@ -83,101 +83,105 @@ const VerticalAccordion = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 justify-center min-h-screen p-2">
-      {items.map((item) => (
-        <div
-          key={item.id}
-          className={`group flex flex-col items-center justify-center
-            ${
-              activeItem === item.id
+    <>
+      <h2 className="text-4xl mb-12 md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+        The Kumon Programme
+      </h2>
+
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 justify-center min-h-screen p-2">
+
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className={`group flex flex-col items-center justify-center
+            ${activeItem === item.id
                 ? "lg:w-[800px] h-[400px] md:h-[500px] lg:h-[600px]"
                 : "lg:w-28 h-24 md:h-28 lg:h-[600px]"
-            } 
+              } 
             w-full rounded-2xl lg:rounded-3xl duration-500 transition-all relative overflow-hidden ${item.color}
             hover:shadow-2xl cursor-pointer`}
-          onMouseEnter={() => handleMouseEnter(item.id)}
-          onMouseLeave={handleMouseLeave}
-        >
-          {/* Background Image with Overlay */}
-          <div
-            className={`absolute inset-0 transition-opacity duration-500
-            ${activeItem === item.id ? "opacity-100" : "opacity-0"}`}
+            onMouseEnter={() => handleMouseEnter(item.id)}
+            onMouseLeave={handleMouseLeave}
           >
-            <Image
-              src={item.image || "/placeholder.svg"}
-              alt={item.title}
-              fill
-              className="object-cover"
-              priority={item.id === 0}
-            />
-            <div className={`absolute inset-0 bg-gradient-to-b from-black/60 to-transparent`} />
-          </div>
+            {/* Background Image with Overlay */}
+            <div
+              className={`absolute inset-0 transition-opacity duration-500
+            ${activeItem === item.id ? "opacity-100" : "opacity-0"}`}
+            >
+              <Image
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                fill
+                className="object-cover"
+                priority={item.id === 0}
+              />
+              <div className={`absolute inset-0 bg-gradient-to-b from-black/60 to-transparent`} />
+            </div>
 
-          {/* Content Container */}
-          <div className="relative w-full h-full flex flex-col">
-            {/* Title - Different positioning for mobile and desktop */}
-            <h1
-              className={`
+            {/* Content Container */}
+            <div className="relative w-full h-full flex flex-col">
+              {/* Title - Different positioning for mobile and desktop */}
+              <h1
+                className={`
                 absolute transition-all duration-500 font-bold tracking-wider ${item.textColor}
-                ${
-                  activeItem === item.id
+                ${activeItem === item.id
                     ? "lg:left-10 lg:top-10 lg:text-4xl text-2xl left-6 top-6"
                     : "lg:-rotate-90 lg:left-1 lg:top-1/2 lg:-translate-y-1/2 lg:text-3xl text-xl left-6 top-1/2 -translate-y-1/2"
-                }
+                  }
               `}
-            >
-              {item.title}
-            </h1>
+              >
+                {item.title}
+              </h1>
 
-            {/* Content - Only visible when active */}
-            <div
-              className={`
+              {/* Content - Only visible when active */}
+              <div
+                className={`
                 transition-all duration-500 delay-200 absolute 
                 ${activeItem === item.id ? "opacity-100" : "opacity-0"}
                 lg:top-32 lg:left-10 lg:right-10
                 top-20 left-6 right-6
               `}
-            >
-              <p
-                className={`text-base lg:text-lg font-medium mb-4 lg:mb-6 ${item.textColor}
-                ${activeItem === item.id ? "block" : "hidden"}`}
               >
-                {item.description}
-              </p>
+                <p
+                  className={`text-base lg:text-lg font-medium mb-4 lg:mb-6 ${item.textColor}
+                ${activeItem === item.id ? "block" : "hidden"}`}
+                >
+                  {item.description}
+                </p>
 
-              <div className="space-y-2 lg:space-y-4">
-                {item.features.map((feature, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: activeItem === item.id ? 0 : -20, opacity: activeItem === item.id ? 1 : 0 }}
-                    transition={{ delay: 0.1 * idx }}
-                    className={`flex items-center gap-2 lg:gap-3
+                <div className="space-y-2 lg:space-y-4">
+                  {item.features.map((feature, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: activeItem === item.id ? 0 : -20, opacity: activeItem === item.id ? 1 : 0 }}
+                      transition={{ delay: 0.1 * idx }}
+                      className={`flex items-center gap-2 lg:gap-3
                       ${activeItem === item.id ? "block" : "hidden"}`}
-                  >
-                    <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 ${item.textColor}`} />
-                    <span className={`${item.textColor} text-sm lg:text-base`}>{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
+                    >
+                      <ArrowRight className={`w-4 h-4 lg:w-5 lg:h-5 ${item.textColor}`} />
+                      <span className={`${item.textColor} text-sm lg:text-base`}>{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
 
-              <motion.button
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: activeItem === item.id ? 0 : 20, opacity: activeItem === item.id ? 1 : 0 }}
-                transition={{ delay: 0.4 }}
-                className={`
+                <motion.button
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: activeItem === item.id ? 0 : 20, opacity: activeItem === item.id ? 1 : 0 }}
+                  transition={{ delay: 0.4 }}
+                  className={`
                   mt-6 lg:mt-8 px-4 lg:px-6 py-2 rounded-full border-2  border-current
                   bg-white hover:scale-95 transition-all text-gray-900  duration-300 text-sm lg:text-base
                   ${activeItem === item.id ? "block" : "hidden"}
                 `}
-              >
-                Learn More
-              </motion.button>
+                >
+                  Learn More
+                </motion.button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>  </>
   )
 }
 

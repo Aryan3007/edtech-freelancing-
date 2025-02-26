@@ -11,7 +11,7 @@ const tabs = [
     id: "learning",
     label: "Learning at the 'just-right' level",
     title: "Self-learning",
-    color: "from-orange-500 to-orange-600",
+    color: "bg-linear-to-r from-lime-200 via-green-400 to-emerald-600",
     lightColor: "from-orange-500/10 to-orange-600/10",
     content: {
       subtitle: "Personalized Learning Path",
@@ -30,7 +30,7 @@ const tabs = [
     id: "worksheets",
     label: "The Kumon worksheets",
     title: "Progressive Learning",
-    color: "from-yellow-500 to-yellow-600",
+    color: "bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-500",
     lightColor: "from-yellow-500/10 to-yellow-600/10",
     content: {
       subtitle: "Structured Development",
@@ -49,7 +49,7 @@ const tabs = [
     id: "instructors",
     label: "Kumon Instructors",
     title: "Expert Guidance",
-    color: "from-purple-500 to-purple-600",
+    color: "bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600",
     lightColor: "from-purple-500/10 to-purple-600/10",
     content: {
       subtitle: "Professional Support",
@@ -70,8 +70,10 @@ export default function OpeningScreen() {
   const [selectedTab, setSelectedTab] = useState<string | null>(null)
 
   return (
-    <section className="py-24 max-w-7xl mx-auto relative">
-      {/* Grid Layout */}
+    <section className="pb-28 flex gap-8 justify-center items-center flex-col max-w-7xl mx-auto relative">
+      <h2 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+        The Kumon Programme
+      </h2>      {/* Grid Layout */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tabs.map((tab) => (

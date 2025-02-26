@@ -50,7 +50,7 @@ export default function Hero() {
   }, [isInView, mainControls])
 
   return (
-    <section ref={ref} className="relative min-h-screen lg:pt-0 pt-28 flex items-center justify-center overflow-hidden bg-gray-50">
+    <section ref={ref} className="relative min-h-screen lg:pt-12 pt-28 flex items-center justify-center overflow-hidden bg-gray-50">
       <HeroSvg />
       <AnimatedGradient />
       <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,18 +128,19 @@ export default function Hero() {
               Chat with Us
             </Button>
           </motion.div>
+          <motion.div
+            className="lg:mt-12 flex my-6 items-center justify-center bottom-10 gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
+            <h1>Powered by Aryan Tyagi</h1>
+            <Image src="/hero.gif" width={100} height={100} alt="logo" />
+
+          </motion.div>
         </motion.div>
       </div>
-      <motion.div
-        className="absolute flex items-center justify-center bottom-10 gap-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        <h1>Powered by Aryan Tyagi</h1>
-        <Image src="/hero.gif" width={100} height={100} alt="logo" />
 
-      </motion.div>
 
 
 

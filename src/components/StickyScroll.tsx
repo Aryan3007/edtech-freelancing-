@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
 import { useEffect, useRef } from "react"
 
 const sections = [
@@ -11,6 +12,10 @@ const sections = [
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-cyan-100 via-blue-300 to-indigo-400",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
+    images: [
+      { src: "/test.svg", width: 500, height: 500, className: "absolute top-0 left-0 z-20" },
+      { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 left-44 z-10" },
+    ],
   },
   {
     tag: "Our Process",
@@ -19,6 +24,10 @@ const sections = [
     video: "/vid2.mp4",
     gradient: "bg-linear-to-r from-lime-200 via-green-400 to-emerald-600",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
+    images: [
+      { src: "/test.svg", width: 500, height: 500, className: "absolute top-0 right-0 z-20" },
+      { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 right-44 z-10" },
+    ],
   },
   {
     tag: "Our Impact",
@@ -27,6 +36,10 @@ const sections = [
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-red-200 via-pink-400 to-rose-600",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
+    images: [
+      { src: "/test.svg", width: 500, height: 500, className: "absolute top-0 left-0 z-20" },
+      { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 left-44 z-10" },
+    ],
   },
 ]
 
@@ -47,7 +60,7 @@ export default function StickyScroll() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
 
   useEffect(() => {
-    videoRefs.current = videoRefs.current.slice(0, sections.length) // Ensure the array has the correct length
+    videoRefs.current = videoRefs.current.slice(0, sections.length)
 
     sections.forEach((_, index) => {
       if (isInView && videoRefs.current[index]) {
@@ -57,11 +70,7 @@ export default function StickyScroll() {
   }, [isInView])
 
   return (
-    <>
-        {/* <svg xmlns="http://www.w3.org/2000/svg" background-color="#FFFFFFFF" viewBox="0 0 1440 320"><path fill="#a2d2ff" fillOpacity="1" d="M0,96L16,90.7C32,85,64,75,96,90.7C128,107,160,149,192,149.3C224,149,256,107,288,117.3C320,128,352,192,384,218.7C416,245,448,235,480,208C512,181,544,139,576,133.3C608,128,640,160,672,149.3C704,139,736,85,768,80C800,75,832,117,864,133.3C896,149,928,139,960,149.3C992,160,1024,192,1056,208C1088,224,1120,224,1152,213.3C1184,203,1216,181,1248,176C1280,171,1312,181,1344,197.3C1376,213,1408,235,1424,245.3L1440,256L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z"></path></svg> */}
-   
-    <div ref={containerRef} className="relative bg-[#ffffff] h-[300vh]">
-  
+    <div ref={containerRef} className="relative h-[300vh]">
       {sections.map((section, index) => {
         return (
           <motion.div
@@ -91,26 +100,72 @@ export default function StickyScroll() {
                     <p className="text-gray-600 text-lg">{section.description}</p>
                   </div>
 
-                  {/* Right Content - Video */}
-                  <div className="relative h-full">
+                  {/* Right Content - Images */}
+                  <div className="relative h-full flex items-center justify-center">
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.2 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                      className="absolute inset-0 rounded-2xl overflow-hidden"
+                      initial={{ opacity: 0, scale: 0.2, rotateY: 30 }}
+                      animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
+                      className="relative w-full h-4/5 rounded-2xl"
+                      style={{
+                        transformStyle: "preserve-3d",
+                        perspective: "1000px",
+                      }}
                     >
-                      <video
-                   ref={(el) => { videoRefs.current[index] = el; void 0; }}
-                        className="w-full h-full object-cover"
-                        loop
-                        muted
-                        playsInline
-                        poster="/placeholder.svg"
-                      >
-                        <source src={section.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      {/* Images with blob animation */}
+                      {section.images.map((image, imageIndex) => (
+                        <motion.div
+                          key={imageIndex}
+                          className={image.className}
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{
+                            scale: [0.8, 1.1, 1],
+                            opacity: 1,
+                          }}
+                          transition={{
+                            duration: 1.2,
+                            delay: imageIndex * 0.2,
+                            ease: [0.34, 1.56, 0.64, 1], // Custom spring-like easing
+                          }}
+                        >
+                          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                            {/* Decorative corner accents */}
+                            <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-white/50 rounded-tl-lg z-10"></div>
+                            <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-white/50 rounded-tr-lg z-10"></div>
+                            <div className="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-white/50 rounded-bl-lg z-10"></div>
+                            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-white/50 rounded-br-lg z-10"></div>
+
+                            {/* Blob animation overlay */}
+                            <motion.div
+                              className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent z-20"
+                              animate={{
+                                scale: [1, 1.05, 1],
+                                opacity: [0.5, 0.3, 0.5],
+                              }}
+                              transition={{
+                                duration: 3,
+                                repeat: Number.POSITIVE_INFINITY,
+                                repeatType: "reverse",
+                                ease: "easeInOut",
+                              }}
+                            />
+
+                            <Image
+                              src={image.src || "/placeholder.svg"}
+                              width={image.width}
+                              height={image.height}
+                              alt=""
+                              className="w-full h-72 object-cover"
+                            />
+                          </div>
+                        </motion.div>
+                      ))}
+
+                      {/* Gradient overlay */}
                     </motion.div>
                   </div>
                 </div>
@@ -119,7 +174,7 @@ export default function StickyScroll() {
           </motion.div>
         )
       })}
-    </div> </>
+    </div>
   )
 }
 

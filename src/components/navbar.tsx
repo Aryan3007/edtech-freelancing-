@@ -64,7 +64,7 @@ const Navbar = () => {
                 >
                   <Link 
                     href={item.href} 
-                    className={`relative px-3 rounded-full py-2 text-sm font-normal group transition-colors duration-200 ${pathname === item.href ? "bg-blue-300 text-black" : "text-gray-600 hover:text-gray-900"}`}
+                    className={`relative px-3 rounded-full py-2 text-sm font-normal group transition-colors duration-200 ${pathname === item.href ? "bg-blue-400 text-white" : "text-gray-600 hover:text-gray-900"}`}
                   >
                     {item.label}
                   </Link>
@@ -81,12 +81,12 @@ const Navbar = () => {
             className="hidden gap-2 md:flex"
           >
             <motion.div whileTap={{ scale: 0.95 }}>
-              <Button className="text-black font-normal bg-blue-300 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
+              <Button className="text-white font-normal bg-blue-400 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
                 Get Started
               </Button>
             </motion.div>
             <motion.div whileTap={{ scale: 0.95 }}>
-              <Button className="text-black font-normal bg-blue-300 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
+              <Button className="text-white font-normal bg-blue-400 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
                 Login
               </Button>
             </motion.div>
