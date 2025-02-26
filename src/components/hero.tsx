@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { HeroSvg } from "./hero-svg"
+import Image from "next/image"
 
 const AnimatedGradient = () => {
   return (
@@ -48,7 +50,8 @@ export default function Hero() {
   }, [isInView, mainControls])
 
   return (
-    <section ref={ref} className="relative min-h-screen pt-28 flex items-center justify-center overflow-hidden bg-gray-50">
+    <section ref={ref} className="relative min-h-screen lg:pt-0 pt-28 flex items-center justify-center overflow-hidden bg-gray-50">
+      <HeroSvg />
       <AnimatedGradient />
       <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -128,15 +131,17 @@ export default function Hero() {
         </motion.div>
       </div>
       <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute flex items-center justify-center bottom-10 gap-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-      
+        <h1>Powered by Aryan Tyagi</h1>
+        <Image src="/hero.gif" width={100} height={100} alt="logo" />
+
       </motion.div>
 
-    
+
 
     </section>
   )

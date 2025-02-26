@@ -75,7 +75,7 @@ export default function OpeningScreen() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tabs.map((tab) => (
-            <motion.button
+            <motion.div
               key={tab.id}
               onClick={() => setSelectedTab(selectedTab === tab.id ? null : tab.id)}
               className="relative text-left rounded-2xl h-[300px] overflow-hidden group cursor-pointer"
@@ -98,7 +98,7 @@ export default function OpeningScreen() {
 
                 <button className="bg-white my-4 w-fit px-4 text-sm p-2 rounded-full">Learn more...</button>
               </div>
-            </motion.button>
+            </motion.div>
           ))}
         </div>
       </div>
