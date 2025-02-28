@@ -146,7 +146,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
           >
-            <h1>Powered by Aryan Tyagi</h1>
+            <h1>Enhance Learning with Grade Next </h1>
             <Image src="/hero.gif" width={100} height={100} alt="logo" />
 
           </motion.div>

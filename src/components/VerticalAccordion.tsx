@@ -85,9 +85,9 @@ const VerticalAccordion = () => {
 
   return (
     <>
-      <h2 className="text-4xl mb-12 md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+      {/* <h2 className="text-4xl mb-12 md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
         The Kumon Programme
-      </h2>
+      </h2> */}
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 justify-center min-h-screen p-2">
 
