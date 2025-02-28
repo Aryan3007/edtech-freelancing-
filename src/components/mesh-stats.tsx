@@ -54,7 +54,7 @@ export default function MeshStats() {
             className="flex items-center justify-center gap-3 mb-6"
           >
             <Sparkles className="h-6 w-6 text-blue-500" />
-            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
               Transform Learning, Maximize Success
             </h2>
             <Sparkles className="h-6 w-6 text-blue-500" />
