@@ -9,18 +9,18 @@ import { Button } from "@/components/ui/button"
 const tabs = [
   {
     id: "learning",
-    label: "Learning at the 'just-right' level",
-    title: "Self-learning",
+    label: "The Grade Next Programme",
+    title: "Adaptive Learning & Performance Tracking",
     color: "bg-linear-to-r from-lime-200 via-green-400 to-emerald-600",
     lightColor: "from-orange-500/10 to-orange-600/10",
     content: {
-      subtitle: "Personalized Learning Path",
+      subtitle: "Personalized Questioning & Progress Insights",
       description:
-        "When students advance ahead of school grade level in the Kumon worksheets, they learn for themselves what they are yet to be taught at school. When they encounter something new, they study the example, draw on previous learning and give it a try.",
+        "Grade Next ensures that learning is tailored to each student’s needs through adaptive questioning. As students progress, the system dynamically adjusts the difficulty level, reinforcing weaker concepts before moving forward. Weekly and community tests provide structured assessments, enabling students to measure their growth, identify improvement areas, and stay motivated. The leader dashboard showcases individual and peer performance, fostering a competitive and goal-driven learning environment.",
       stats: [
-        { label: "Success Rate", value: "94%" },
-        { label: "Student Growth", value: "87%" },
-        { label: "Satisfaction", value: "4.8/5" },
+        { label: "Success Rate", value: "95%" },
+        { label: "Student Progress", value: "89%" },
+        { label: "Learning Satisfaction", value: "4.9/5" },
       ],
     },
     image:
@@ -28,18 +28,18 @@ const tabs = [
   },
   {
     id: "worksheets",
-    label: "The Kumon worksheets",
-    title: "Progressive Learning",
+    label: "Smart Revisions for Mastery",
+    title: "Targeted Practice & Retention Boost",
     color: "bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-500",
     lightColor: "from-yellow-500/10 to-yellow-600/10",
     content: {
-      subtitle: "Structured Development",
+      subtitle: "Structured Review & Reinforcement",
       description:
-        "Our worksheets are designed to help students master concepts and advance beyond their school grade level. Each worksheet builds on skills learned in previous worksheets, ensuring a solid foundation for learning.",
+        "Effective learning requires consistent reinforcement, and Grade Next’s smart revision system ensures just that. The platform automatically schedules revisions based on past performance, helping students revisit and strengthen weak concepts. Weekly, 15-day, and monthly revision plans provide structured review sessions, ensuring long-term retention and mastery of topics. If students struggle repeatedly with specific concepts, additional practice sessions are introduced to solidify understanding before moving forward.",
       stats: [
-        { label: "Completion Rate", value: "92%" },
-        { label: "Skill Mastery", value: "89%" },
-        { label: "Progress Rate", value: "95%" },
+        { label: "Concept Retention", value: "92%" },
+        { label: "Practice Completion", value: "85%" },
+        { label: "Student Confidence", value: "4.8/5" },
       ],
     },
     image:
@@ -47,24 +47,23 @@ const tabs = [
   },
   {
     id: "instructors",
-    label: "Kumon Instructors",
-    title: "Expert Guidance",
+    label: "Expert Tutor Support & Guidance",
+    title: "Personalized Assistance & Concept Clarity",
     color: "bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600",
     lightColor: "from-purple-500/10 to-purple-600/10",
     content: {
-      subtitle: "Professional Support",
+      subtitle: "One-on-One Guidance & Targeted Explanations",
       description:
-        "Our certified instructors are trained to observe and guide students through their learning journey. They provide the right amount of support while encouraging independent learning.",
+        "Grade Next bridges the gap between independent learning and expert guidance. If a student consistently struggles with specific topics, tutors are automatically notified to intervene and provide personalized support. One-on-one revision sessions ensure concept clarity, helping students overcome challenges with targeted explanations and guided practice. This direct interaction fosters confidence, encourages deeper understanding, and ensures that no student is left behind.",
       stats: [
-        { label: "Certified Teachers", value: "100%" },
-        { label: "Experience", value: "12+ Yrs" },
-        { label: "Student Rating", value: "4.9/5" },
+        { label: "Concept Improvement", value: "90%" },
+        { label: "Student Engagement", value: "88%" },
       ],
     },
     image:
       "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
   },
-]
+];
 
 export default function OpeningScreen() {
   const [selectedTab, setSelectedTab] = useState<string | null>(null)
@@ -72,7 +71,7 @@ export default function OpeningScreen() {
   return (
     <section className="pb-28 flex gap-8 justify-center items-center flex-col max-w-7xl mx-auto relative">
       <h2 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
-        The Kumon Programme
+      The Grade Next Programme
       </h2>      {/* Grid Layout */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

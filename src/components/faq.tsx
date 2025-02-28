@@ -5,52 +5,52 @@ import { Sparkles, Triangle, Square, Circle, Hexagon, Star } from "lucide-react"
 
 const faqs = [
   {
-    question: "Why is the sky blue?",
+    question: "How does Grade Next personalize learning?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque laboriosam neque reprehenderit saepe eius dolorum vel consequuntur perspiciatis ad vero.",
+      "Our platform adapts to each student's strengths and weaknesses, providing tailored lessons, revision-based practice, and interactive exercises to enhance understanding and retention.",
     gradient: "from-blue-500 to-indigo-600",
     lightGradient: " bg-gradient-to-r  from-blue-100 to-indigo-200",
     icon: "✨",
   },
   {
-    question: "Why did the chicken cross the road?",
+    question: "Can I track my learning progress?",
     answer:
-      "To get to the other side! But seriously, this classic riddle has been making people groan and laugh for generations. It's the ultimate anti-joke that plays with our expectations of complex answers.",
+      "Yes! Our platform offers detailed progress tracking, showing performance insights, completed lessons, and areas that need improvement to help students stay on track.",
     gradient: "from-amber-500 to-orange-600",
     lightGradient: "from-amber-100 to-orange-200",
-    icon: "🐔",
+    icon: "📊",
   },
   {
-    question: "How many licks does it take to get to the center of a tootsie pop?",
+    question: "Are tutors available for concept revision?",
     answer:
-      "According to scientific studies, it takes an average of 364 licks to reach the center of a Tootsie Pop. However, this number can vary based on factors like licking technique, saliva composition, and patience levels.",
+      "Absolutely! We provide expert tutors to help students reinforce weak concepts and gain a deeper understanding through guided learning sessions.",
     gradient: "from-pink-500 to-rose-600",
     lightGradient: "from-pink-100 to-rose-200",
-    icon: "🍭",
+    icon: "👨‍🏫",
   },
   {
-    question: "Where's Waldo?",
+    question: "How do the weekly and structured tests work?",
     answer:
-      "Waldo could be anywhere in the detailed illustrations! The key to finding him is to scan methodically and look for his distinctive red and white striped shirt, hat, and glasses. He's often hidden in plain sight among crowds of people and busy scenes.",
+      "Students can take scheduled weekly tests and structured assessments to evaluate their understanding, track improvements, and stay prepared for exams.",
     gradient: "from-red-500 to-red-700",
     lightGradient: "from-red-100 to-red-200",
-    icon: "🔍",
+    icon: "📝",
   },
   {
-    question: "What is the meaning of life?",
+    question: "Is there a mobile-friendly version?",
     answer:
-      "The meaning of life is a philosophical question that has been debated throughout history. While some say it's 42, others believe it's about finding purpose, connection, and joy in our everyday experiences.",
+      "Yes, Grade Next is fully responsive and accessible across all devices, including smartphones, tablets, and desktops, so you can learn anytime, anywhere.",
     gradient: "from-emerald-500 to-teal-600",
     lightGradient: "from-emerald-100 to-teal-200",
-    icon: "🌱",
+    icon: "📱",
   },
   {
-    question: "How do magnets work?",
+    question: "What subjects and topics are covered?",
     answer:
-      "Magnets work through electromagnetic fields. They have north and south poles that attract or repel each other based on their orientation. This phenomenon is due to the alignment of electrons in certain materials, creating a magnetic field.",
+      "We offer a wide range of structured courses, covering essential academic subjects along with skill-based learning to ensure holistic development.",
     gradient: "from-purple-500 to-violet-600",
     lightGradient: "from-purple-100 to-violet-200",
-    icon: "🧲",
+    icon: "📚",
   },
 ]
 

@@ -4,11 +4,12 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
 
+
 const sections = [
   {
-    tag: "Our Services",
-    title: "Custom Material Solutions",
-    description: "Tailoring solutions to meet specific project requirements and environmental goals",
+    tag: "Structured Learning",
+    title: "Guided Learning & Smart Revisions",
+    description: "A guided learning experience with topic-wise practice, smart revisions, and repeated exposure to weak concepts for better retention.",
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-cyan-100 via-blue-300 to-indigo-400",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
@@ -18,21 +19,21 @@ const sections = [
     ],
   },
   {
-    tag: "Our Process",
-    title: "Innovative Manufacturing",
-    description: "Advanced manufacturing techniques ensuring quality and sustainability",
+    tag: "Performance Tracking",
+    title: "Weekly Tests & Insights",
+    description: "Comprehensive weekly tests with a leader dashboard to track progress, identify strengths, and focus on areas needing improvement.",
     video: "/vid2.mp4",
     gradient: "bg-linear-to-r from-lime-200 via-green-400 to-emerald-600",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
     images: [
-      { src: "/test.svg", width: 500, height: 500, className: "absolute top-0 right-0 z-20" },
-      { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 right-44 z-10" },
+      { src: "/test.svg", width: 500, height: 500, className: "absolute top-0 left-0 z-20" },
+      { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 left-44 z-10" },
     ],
   },
   {
-    tag: "Our Impact",
-    title: "Sustainable Development",
-    description: "Creating positive environmental impact through responsible material choices",
+    tag: "Expert Guidance",
+    title: "Tutoring & Community Support",
+    description: "Personalized tutor support for revising weak concepts, along with a collaborative student community for grade-based discussions and doubt-solving.",
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-red-200 via-pink-400 to-rose-600",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
@@ -41,7 +42,9 @@ const sections = [
       { src: "/test2.svg", width: 500, height: 500, className: "absolute top-10 left-44 z-10" },
     ],
   },
-]
+];
+
+
 
 export default function StickyScroll() {
   const containerRef = useRef<HTMLDivElement>(null)

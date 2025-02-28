@@ -24,13 +24,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="bg-[#a2d2ff] rounded-3xl p-8 text-black">
             <div className="flex items-center mb-6">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-              </svg>
-              <span className="text-xl font-semibold">Flokana</span>
+              
+              <span className="text-xl font-semibold">Grade Next – Smarter Learning, Better Results!</span>
             </div>
             <p className="text-sm mb-8 opacity-90">
-              Trusted in more than 100 countries & 5 million customers. Have any query? contact us we are here for you.
+            Empowering Learners Worldwide – Anytime, Anywhere. Need Help? We&apos;re Just a Click Away!
             </p>
             <div className="flex space-x-4">
               <Link

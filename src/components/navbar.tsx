@@ -46,7 +46,7 @@ const Navbar = () => {
               href="/"
               className="text-xl uppercase font-semibold bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent hover:from-gray-600 hover:to-gray-800 transition-all duration-300"
             >
-              Flokana
+              Grade Next
             </Link>
           </motion.div>
 

@@ -10,105 +10,102 @@ import { useState, useCallback, useEffect } from "react"
 const courses = [
   {
     id: 1,
-    title: "First Touch",
-    price: 1350,
-    hours: 150,
+    title:"An Unforgettable Learning Journey!", 
+    occ: "STUDENT",
     color: "from-blue-400 to-cyan-300",
     image:
       "https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "Jonathan Hope",
+      name:  "Emma Johnson",
       avatar:
         "https://images.unsplash.com/photo-1599054802207-91d346adc120?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "Yogyakarta",
+      location: "New York, USA",
     },
     icon: Waves,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"This platform helped me stay on track with my studies. The structured lessons and interactive exercises made learning so much more enjoyable!"
   },
   {
     id: 2,
-    title: "Let's Get Wet",
-    price: 1675,
-    hours: 220,
+    title: "Boosted My Confidence!",
+    occ: "STUDENT",
     color: "from-teal-400 to-emerald-300",
     image:
       "https://images.unsplash.com/photo-1455729552865-3658a5d39692?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "Sarah Waters",
+      name: "Liam Carter",
       avatar:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "Bali",
+      location: "London, UK",
     },
     icon: Sun,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"I used to struggle with tough subjects, but the revision-based practice and weekly tests really helped me improve. Now, I feel ready for any challenge!"
   },
   {
     id: 3,
-    title: "Basic Surf",
-    price: 925,
-    hours: 70,
+    title: "Learning Made Fun and Easy!",
+    occ: "STUDENT",
+
     color: "from-amber-400 to-yellow-300",
     image:
       "https://images.unsplash.com/photo-1509914398892-963f53e6e2f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "Mike Turner",
+      name: "Sophia Martinez",
       avatar:
         "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "Hawaii",
+      location: "Sydney, Australia",
     },
     icon: Compass,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"The step-by-step guidance and engaging activities kept me motivated. I love how I can track my progress and keep improving every day!"
   },
   {
     id: 4,
-    title: "Advanced Techniques",
-    price: 1850,
-    hours: 180,
+    title: "A Game-Changer for My Child!",
+    occ: "PARENT",
+
     color: "from-purple-400 to-indigo-300",
     image:
       "https://images.unsplash.com/photo-1505459668311-8dfac7952bf0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "Lisa Rodriguez",
+      name: "Olivia Brown",
       avatar:
         "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "California",
+      location: "Toronto, Canada",
     },
     icon: Wind,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"My son struggled with certain subjects, but the personalized practice sessions and tutor support made a huge difference. Now, he's more confident and engaged!"
   },
   {
     id: 5,
-    title: "Pro Surfing",
-    price: 2100,
-    hours: 250,
+    title: "Finally, a Platform That Works!",
+    occ: "PARENT",
     color: "from-pink-400 to-rose-300",
     image:
       "https://images.unsplash.com/photo-1501949997128-2fdb9f6428f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "David Chen",
+      name: "James Lee",
       avatar:
         "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "Australia",
+      location: "San Francisco, USA",
     },
     icon: Sun,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"As a parent, I wanted a learning solution that actually helps my child progress. The adaptive learning and structured revisions are exactly what we needed!"
   },
   {
     id: 6,
-    title: "Ocean Mastery",
-    price: 1775,
-    hours: 200,
+    title: "Improved Results & Independent Learning!",
+    occ: "PARENT",
+
     color: "from-orange-400 to-red-300",
     image:
       "https://images.unsplash.com/photo-1513737567531-bc431c8e5e73?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     instructor: {
-      name: "Emma Wilson",
+      name: "Ethan Wilson",
       avatar:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "South Africa",
+      location: "Dubai, UAE",
     },
     icon: Compass,
-    description:"This course is designed for beginners who want to learn the basics of surfing. You will learn how to paddle, stand up, and ride the waves with confidence."
+    description:"I've seen a major improvement in my daughter's grades since using this platform. She's more disciplined and enjoys learning like never before!"
   },
 ]
 
@@ -242,7 +239,7 @@ export default function SurfCarousel() {
                     }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.5 }}
-                    className="flex-[0_0_80%] max-w-lg mx-auto lg:px-4"
+                    className="flex-[0_0_100%] max-w-lg mx-auto lg:px-4"
                   >
                     <div className="relative aspect-[3/4] lg:aspect-[4/5] overflow-hidden rounded-3xl shadow-xl group">
                       <Image
@@ -260,11 +257,9 @@ export default function SurfCarousel() {
                         <div className="flex justify-between items-start">
                           <div>
                             <div className="text-sm font-semibold mb-1 bg-white/80 text-blue-600 px-3 py-1 rounded-full inline-block">
-                              ${course.price}
+                              {course.occ}
                             </div>
-                            <div className="text-sm bg-white/80 text-slate-700 px-3 py-1 rounded-full inline-block mt-2">
-                              {course.hours} hours
-                            </div>
+                            
                           </div>
                           <motion.div
                             className="bg-white/80 p-2 rounded-full"

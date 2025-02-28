@@ -8,50 +8,51 @@ import { ArrowRight } from "lucide-react"
 const items = [
   {
     id: 0,
-    title: "SCIENCE",
+    title: "Comprehensive Learning",
     color: "bg-red-500",
     hoverColor: "group-hover:bg-red-600",
     textColor: "text-red-50",
     image: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?q=80&w=2071&auto=format&fit=crop",
-    description: "Master mathematics from basic arithmetic to advanced calculus with our comprehensive program.",
+    description: "Build Strong Foundations with Interactive Learning. Develop essential skills through engaging lessons tailored to individual learning needs. Our structured approach ensures better understanding and long-term retention of concepts.",
     features: [
-      "Personalized learning path",
-      "Daily practice worksheets",
-      "Regular assessments",
-      "Problem-solving skills",
+      "Personalized practice sessions for better comprehension",
+      "Step-by-step learning to master key concepts",
+      "Interactive exercises for skill enhancement",
+      "Continuous progress tracking and improvement",
     ],
   },
   {
     id: 1,
-    title: "ENGLISH",
+    title: "Experiential Understanding",
     color: "bg-blue-500",
     hoverColor: "group-hover:bg-blue-600",
     textColor: "text-blue-50",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop",
-    description: "Develop strong reading, writing, and communication skills through our proven methodology.",
-    features: ["Reading comprehension", "Writing exercises", "Vocabulary building", "Grammar mastery"],
+    description: "Learn Through Real-World Applications & Hands-on Practice. Gain a deeper understanding of concepts with practical applications, experiments, and structured problem-solving methods designed to boost critical thinking.",
+    features: [
+      "Hands-on activities and real-world problem-solving",
+      "Conceptual learning beyond traditional methods",
+      "Application-based exercises for deeper insight",
+      "Encouraging curiosity and analytical thinking",
+    ],
   },
   {
     id: 2,
-    title: "SCIENCE",
+    title: "Future-Ready Skills",
     color: "bg-emerald-500",
     hoverColor: "group-hover:bg-emerald-600",
     textColor: "text-emerald-50",
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop",
-    description: "Explore the wonders of science through hands-on experiments and engaging lessons.",
-    features: ["Interactive experiments", "Scientific concepts", "Lab work", "Research projects"],
+    description: "Develop Logical Thinking & Problem-Solving Abilities. Empower learners with structured exercises designed to enhance cognitive abilities, logical reasoning, and structured thinking through engaging challenges and real-world projects.",
+    features: [
+      "Logical reasoning and structured thinking exercises",
+      "Project-based learning for skill development",
+      "Problem-solving challenges for better understanding",
+      "Interactive modules to boost creativity and innovation",
+    ],
   },
-  {
-    id: 3,
-    title: "CODING",
-    color: "bg-violet-500",
-    hoverColor: "group-hover:bg-violet-600",
-    textColor: "text-violet-50",
-    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2031&auto=format&fit=crop",
-    description: "Learn programming fundamentals and build real-world applications.",
-    features: ["Basic programming", "Web development", "App creation", "Problem solving"],
-  },
-]
+];
+
 
 const VerticalAccordion = () => {
   const [activeItem, setActiveItem] = useState(0)
@@ -96,7 +97,7 @@ const VerticalAccordion = () => {
             className={`group flex flex-col items-center justify-center
             ${activeItem === item.id
                 ? "lg:w-[800px] h-[400px] md:h-[500px] lg:h-[600px]"
-                : "lg:w-28 h-24 md:h-28 lg:h-[600px]"
+                : "lg:w-32 h-24 md:h-28 lg:h-[600px]"
               } 
             w-full rounded-2xl lg:rounded-3xl duration-500 transition-all relative overflow-hidden ${item.color}
             hover:shadow-2xl cursor-pointer`}
@@ -126,7 +127,7 @@ const VerticalAccordion = () => {
                 absolute transition-all duration-500 font-bold tracking-wider ${item.textColor}
                 ${activeItem === item.id
                     ? "lg:left-10 lg:top-10 lg:text-4xl text-2xl left-6 top-6"
-                    : "lg:-rotate-90 lg:left-1 lg:top-1/2 lg:-translate-y-1/2 lg:text-3xl text-xl left-6 top-1/2 -translate-y-1/2"
+                    : "lg:-rotate-90 lg:-left-8 lg:top-1/2 lg:-translate-y-1/2 lg:text-2xl text-xl left-6 top-1/2 -translate-y-1/2"
                   }
               `}
               >

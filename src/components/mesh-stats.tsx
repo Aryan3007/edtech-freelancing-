@@ -2,27 +2,29 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
-import { Sparkles, TrendingUp, Users, Target, BarChart3 } from "lucide-react"
+import { Sparkles, TrendingUp, Users, Target, BarChart3, Goal } from "lucide-react"
 
 const stats = {
   before: {
-    title: "Before Mesh",
+    title: "Before Grade Next:",
     mainStat: "5-10%",
     subStats: [
-      { label: "Performance Rate", value: "65%", icon: TrendingUp },
-      { label: "Team Efficiency", value: "72%", icon: Users },
-      { label: "Goal Achievement", value: "58%", icon: Target },
+      { label: "High Performers Across the Organization", value: "5-10%", icon: TrendingUp },
+      { label: "Performance Rate", value: "65%", icon: Users },
+      { label: "Efficiency", value: "72%", icon: Target },
+      { label: " Goal Achievement", value: "58%", icon: Goal },
     ],
     gradient: "from-slate-500 to-slate-600",
     lightGradient: "from-slate-500/10 to-slate-600/10",
   },
   after: {
-    title: "After Mesh",
+    title: "After Grade Next",
     mainStat: "10-20%",
     subStats: [
-      { label: "Performance Rate", value: "94%", icon: TrendingUp },
-      { label: "Team Efficiency", value: "89%", icon: Users },
-      { label: "Goal Achievement", value: "92%", icon: Target },
+      { label: "High Performers Across the Organization", value: "10-20%", icon: TrendingUp },
+      { label: "Performance Rate", value: "94%", icon: Users },
+      { label: "Efficiency", value: "89%", icon: Target },
+      { label: "Goal Achievement", value: "89%", icon: Goal },
     ],
     gradient: "from-blue-500 to-indigo-600",
     lightGradient: "from-blue-500/10 to-indigo-600/10",
@@ -53,7 +55,7 @@ export default function MeshStats() {
           >
             <Sparkles className="h-6 w-6 text-blue-500" />
             <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-              Mesh helps organizations
+            Transform Learning, Maximize Success
             </h2>
             <Sparkles className="h-6 w-6 text-blue-500" />
           </motion.div>
@@ -64,8 +66,8 @@ export default function MeshStats() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto"
           >
-            4x their chances of hitting business goals by improving their high performer density by upto 15%
-          </motion.p>
+Enhance performance, boost engagement, and drive better outcomes with a tailored learning
+experience          </motion.p>
         </div>
 
         {/* Toggle Button */}
@@ -91,7 +93,7 @@ export default function MeshStats() {
                 }`}
               >
                 <BarChart3 className="h-5 w-5" />
-                Before Mesh
+                Before Grade Next
               </button>
               <button
                 onClick={() => setActiveState("after")}
@@ -100,7 +102,7 @@ export default function MeshStats() {
                 }`}
               >
                 <BarChart3 className="h-5 w-5" />
-                After Mesh
+                After Grade Next
               </button>
             </div>
           </motion.div>

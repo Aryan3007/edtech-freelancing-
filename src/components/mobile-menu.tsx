@@ -2,6 +2,8 @@ import type React from "react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -44,9 +46,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           >
             Contact
           </Link>
-          <Button variant="default" onClick={onClose}>
-            Get Started
-          </Button>
+          <motion.div whileTap={{ scale: 0.95 }}>
+              <Button className="text-white font-normal w-full bg-blue-400 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
+                Get Started
+              </Button>
+            </motion.div>
+            <motion.div whileTap={{ scale: 0.95 }}>
+              <Button className="text-white font-normal w-full bg-blue-400 hover:scale-95 shadow-lg rounded-full transition-all duration-300">
+                Login
+              </Button>
+            </motion.div>
         </div>
       </SheetContent>
     </Sheet>

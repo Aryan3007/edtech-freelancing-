@@ -20,7 +20,7 @@ const AnimatedGradient = () => {
 const DrawCircleText = () => {
   return (
     <span className="relative">
-      Marketing
+      Education
       <svg viewBox="0 0 286 73" fill="none" className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1">
         <motion.path
           initial={{ pathLength: 0 }}
@@ -63,7 +63,7 @@ export default function Hero() {
           animate={mainControls}
           transition={{ duration: 0.5, delay: 0.25 }}
         >
-          <div className="inline-block mb-10">
+          <div className="inline-block mb-4">
             <motion.div
               className="bg-white/30 backdrop-blur-md rounded-full px-3 py-1 text-sm font-medium text-gray-700 border border-gray-200 shadow-sm"
               whileHover={{ scale: 1.05 }}
@@ -71,7 +71,7 @@ export default function Hero() {
             >
               <span className="flex items-center">
                 <Sparkles className="w-4 h-4 mr-2 text-yellow-500" />
-                Next-Gen AI Automation
+                Learning With Grade Next
               </span>
             </motion.div>
           </div>
@@ -82,7 +82,7 @@ export default function Hero() {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            Scale your <DrawCircleText /> with Simple AI Tools
+            Master Learning with Smart  <DrawCircleText />
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto"
@@ -91,8 +91,8 @@ export default function Hero() {
               visible: { opacity: 1, y: 0 },
             }}
           >
-            Make data-driven decisions with AI Insights. Streamline your workflow, boost productivity, and stay ahead of
-            the competition.
+            Unlock personalized learning real-time insights. Stay on track with adaptive practice, smart revisions,
+            and interactive challenges designed for your success. 
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -120,13 +120,25 @@ export default function Hero() {
                 </span>
               </Button>
             </motion.div>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-gray-300 hover:border-gray-400 px-8 py-6 text-lg rounded-full shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              Chat with Us
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                className="relative overflow-hidden rounded-full  bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-6 text-lg shadow-lg transition-all duration-300 group"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-blue-300 to-violet-400"
+                  initial={{ x: "100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+                <span className="relative z-10 flex items-center">
+                  Chat With us
+                  <motion.span className="ml-2" initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <ArrowRight className="h-5 w-5" />
+                  </motion.span>
+                </span>
+              </Button>
+            </motion.div>
           </motion.div>
           <motion.div
             className="lg:mt-12 flex my-6 items-center justify-center bottom-10 gap-4"
