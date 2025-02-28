@@ -89,18 +89,18 @@ export default function StickyScroll() {
               <div className="relative bg-white rounded-3xl h-full overflow-hidden">
                 <div className={`absolute inset-0 bg-gradient-to-r ${section.gradient}`} />
 
-                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12 h-full">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-20 p-8 md:p-12 h-full">
                   {/* Left Content */}
                   <div className="flex flex-col justify-center">
                     <span
-                      className={`inline-block px-4 py-2 rounded-full ${section.tagColor} text-sm font-medium mb-6 w-fit`}
+                      className={`inline-block px-4 py-2 rounded-full ${section.tagColor} text-sm font-medium mb-2 lg:mb-6 w-fit`}
                     >
                       {section.tag}
                     </span>
 
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{section.title}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 lg:mb-4">{section.title}</h2>
 
-                    <p className="text-gray-600 text-lg">{section.description}</p>
+                    <p className="text-gray-600 text-sm lg:text-lg">{section.description}</p>
                   </div>
 
                   {/* Right Content - Images */}
@@ -113,7 +113,7 @@ export default function StickyScroll() {
                         type: "spring",
                         stiffness: 100,
                       }}
-                      className="relative w-full h-4/5 rounded-2xl"
+                      className="relative w-full h-96 lg:h-4/5 rounded-2xl"
                       style={{
                         transformStyle: "preserve-3d",
                         perspective: "1000px",
@@ -162,7 +162,7 @@ export default function StickyScroll() {
                               width={image.width}
                               height={image.height}
                               alt=""
-                              className="w-full h-72 object-cover"
+                              className="w-full h-48 lg:h-80 object-cover"
                             />
                           </div>
                         </motion.div>

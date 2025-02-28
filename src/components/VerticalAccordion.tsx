@@ -96,7 +96,7 @@ const VerticalAccordion = () => {
             key={item.id}
             className={`group flex flex-col items-center justify-center
             ${activeItem === item.id
-                ? "lg:w-[800px] h-[400px] md:h-[500px] lg:h-[600px]"
+                ? "lg:w-[800px] h-[550px] md:h-[500px] lg:h-[600px]"
                 : "lg:w-32 h-24 md:h-28 lg:h-[600px]"
               } 
             w-full rounded-2xl lg:rounded-3xl duration-500 transition-all relative overflow-hidden ${item.color}
@@ -144,7 +144,7 @@ const VerticalAccordion = () => {
               `}
               >
                 <p
-                  className={`text-base lg:text-lg font-medium mb-4 lg:mb-6 ${item.textColor}
+                  className={`text-base lg:text-lg font-medium my-4 lg:mb-6 ${item.textColor}
                 ${activeItem === item.id ? "block" : "hidden"}`}
                 >
                   {item.description}

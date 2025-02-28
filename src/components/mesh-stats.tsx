@@ -55,7 +55,7 @@ export default function MeshStats() {
           >
             <Sparkles className="h-6 w-6 text-blue-500" />
             <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-            Transform Learning, Maximize Success
+              Transform Learning, Maximize Success
             </h2>
             <Sparkles className="h-6 w-6 text-blue-500" />
           </motion.div>
@@ -66,8 +66,8 @@ export default function MeshStats() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto"
           >
-Enhance performance, boost engagement, and drive better outcomes with a tailored learning
-experience          </motion.p>
+            Enhance performance, boost engagement, and drive better outcomes with a tailored learning
+            experience          </motion.p>
         </div>
 
         {/* Toggle Button */}
@@ -88,20 +88,18 @@ experience          </motion.p>
               />
               <button
                 onClick={() => setActiveState("before")}
-                className={`relative px-6 py-3 rounded-full flex items-center gap-2 transition-colors ${
-                  activeState === "before" ? "text-white" : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`relative px-6 py-3 lg:text-base text-xs rounded-full flex items-center gap-2 transition-colors ${activeState === "before" ? "text-white" : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
-                <BarChart3 className="h-5 w-5" />
+                <BarChart3 className="h-5 lg:flex hidden w-5" />
                 Before Grade Next
               </button>
               <button
                 onClick={() => setActiveState("after")}
-                className={`relative px-6 py-3 rounded-full flex items-center gap-2 transition-colors ${
-                  activeState === "after" ? "text-white" : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`relative px-6 py-3 rounded-full lg:text-base text-xs flex items-center gap-2 transition-colors ${activeState === "after" ? "text-white" : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
-                <BarChart3 className="h-5 w-5" />
+                <BarChart3 className="h-5 lg:flex hidden w-5" />
                 After Grade Next
               </button>
             </div>
