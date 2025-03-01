@@ -8,6 +8,7 @@ import SustainableSection from "@/components/mesh-stats";
 import OpeningScreen from "@/components/opening-screen";
 import VerticalAccordion from "@/components/VerticalAccordion";
 import HeroCarousel from "@/components/hero-carousel";
+import ComparisonTable from "@/components/comparison-table";
 // import TextParallaxContentExample from "@/components/TextParallaxContent";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
       <SustainableSection />
       <StickyScroll />
       {/* <TextParallaxContentExample /> */}
-
+<ComparisonTable/>
       <PricingSection />
       <SurfCarousel />
       <FAQ />
