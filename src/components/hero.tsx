@@ -10,9 +10,9 @@ import Image from "next/image"
 const AnimatedGradient = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl opacity-30 animate-blob" />
-      <div className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-pink-400 to-red-500 rounded-full blur-3xl opacity-30 animate-blob animation-delay-2000" />
-      <div className="absolute left-1/4 bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-green-400 to-cyan-500 rounded-full blur-3xl opacity-30 animate-blob animation-delay-4000" />
+      <div className="absolute -left-1/4 -top-1/4 w-1/2 h-1/2 bg-gradient-to-r from-red-400 to-pink-500 rounded-full blur-3xl opacity-40 animate-blob" />
+      <div className="absolute -right-1/4 -bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-pink-400 to-red-500 rounded-full blur-3xl opacity-40 animate-blob animation-delay-2000" />
+      <div className="absolute left-1/4 bottom-1/4 w-1/2 h-1/2 bg-gradient-to-r from-green-600 to-cyan-600 rounded-full blur-3xl opacity-40 animate-blob animation-delay-4000" />
     </div>
   )
 }

@@ -69,7 +69,7 @@ export default function OpeningScreen() {
   const [selectedTab, setSelectedTab] = useState<string | null>(null)
 
   return (
-    <section className="pb-28 flex gap-8 justify-center items-center flex-col max-w-7xl mx-auto relative">
+    <section className="py-28 flex gap-8 justify-center items-center flex-col max-w-7xl mx-auto relative">
       <h2 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
       The Grade Next Programme
       </h2>      {/* Grid Layout */}
