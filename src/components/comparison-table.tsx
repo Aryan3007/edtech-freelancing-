@@ -133,7 +133,7 @@ const CellContent = ({ value, gradient }: { value: string; gradient: string }) =
   } else if (
     value.startsWith("✗") ||
     value.includes("Fixed") ||
-    value.includes("No") ||
+    value.startsWith("No") ||
     value.includes("Limited") ||
     value.includes("Group") ||
     value.includes("Generalized") ||

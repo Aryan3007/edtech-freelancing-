@@ -7,6 +7,14 @@ import Link from "next/link"
 // Carousel slide data
 const slides = [
   {
+    id: 4,
+    backgroundImage: "https://images.unsplash.com/photo-1490424660416-359912d314b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    heading: "Master Learning with AI-Powered Education",
+    subheading: "",
+    paragraph:
+      "Unlock personalized learning with real-time AI insights. Stay on track with adaptive practice, smart revisions, and interactive challenges designed for your success.",
+    buttonLink: "/stanford-partnership",
+  },{
     id: 1,
     backgroundImage: "https://images.unsplash.com/photo-1602542165989-999c53234fdd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     heading: "Stanford & Havard University",
@@ -43,7 +51,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
-    }, 5000)
+    }, 20000)
 
     return () => clearInterval(interval)
   }, []) // Removed unnecessary dependency: currentSlide
