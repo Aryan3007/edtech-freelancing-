@@ -5,7 +5,7 @@ import PricingSection from "@/components/PricingSection";
 import StickyScroll from "@/components/StickyScroll";
 import SurfCarousel from "@/components/testimonial-carousel";
 import SustainableSection from "@/components/mesh-stats";
-import OpeningScreen from "@/components/opening-screen";
+// import OpeningScreen from "@/components/opening-screen";
 import VerticalAccordion from "@/components/VerticalAccordion";
 import HeroCarousel from "@/components/hero-carousel";
 import ComparisonTable from "@/components/comparison-table";
@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* <Hero /> */}
       <HeroCarousel/>
-      <OpeningScreen />
+      {/* <OpeningScreen /> */}
       <VerticalAccordion />
 
       <SustainableSection />

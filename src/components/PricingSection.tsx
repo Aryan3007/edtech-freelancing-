@@ -53,7 +53,7 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    price: "Contact",
+    price: "Contact ",
     period: " us",
     description: "Best for institutions and large teams.",
     features: [

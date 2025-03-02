@@ -9,28 +9,28 @@ const slides = [
   {
     id: 1,
     backgroundImage: "https://images.unsplash.com/photo-1602542165989-999c53234fdd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    heading: "Stanford University",
-    subheading: "We are in partnership with",
+    heading: "Stanford & Havard University",
+    subheading: "Built with Expert Guidance ",
     paragraph:
-      "Join us in our collaborative efforts with one of the world's leading research and teaching institutions, known for its entrepreneurial character and academic strength.",
+      "Developed with insights from top educators and researchers, Grade Next integrates proven learning methodologies to enhance student success.",
     buttonLink: "/stanford-partnership",
   },
   {
     id: 2,
     backgroundImage: "https://images.unsplash.com/photo-1617117206620-b01f2919ff86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    heading: "Harvard University",
-    subheading: "Excellence in education with",
+    heading: "McGill University ",
+    subheading: "Empowering Education with Innovation",
     paragraph:
-      "Discover our joint programs with Harvard University, offering world-class educational opportunities and research collaborations across multiple disciplines.",
+      "In collaboration with McGill University experts, Grade Next incorporates cutting-edge ducational research to create an engaging and effective learning experience for students worldwide.",
     buttonLink: "/harvard-partnership",
   },
   {
     id: 3,
     backgroundImage: "https://images.unsplash.com/photo-1581726707445-75cbe4efc586?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    heading: "MIT",
-    subheading: "Innovating together with",
+    heading: "The University of Tokyo ",
+    subheading: "Advancing Learning with Excellence",
     paragraph:
-      "Our partnership with MIT brings cutting-edge technology and innovation to our students, with collaborative projects that are shaping the future.",
+      "With insights from leading researchers at The University of Tokyo, Grade Next integrates innovative learning strategies to enhance student engagement, critical thinking, and academic growth.",
     buttonLink: "/mit-partnership",
   },
 ]

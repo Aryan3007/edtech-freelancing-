@@ -8,8 +8,8 @@ import { useEffect, useRef } from "react"
 const sections = [
   {
     tag: "Structured Learning",
-    title: "Guided Learning & Smart Revisions",
-    description: "A guided learning experience with topic-wise practice, smart revisions, and repeated exposure to weak concepts for better retention.",
+    title: "AI-Powered Structured Learning & Revisions",
+    description: "A guided learning experience with AI-driven topic-wise practice, smart revisions, and repeated exposure to weak concepts for better retention.",
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-cyan-100 via-blue-300 to-indigo-400",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
@@ -20,8 +20,8 @@ const sections = [
   },
   {
     tag: "Performance Tracking",
-    title: "Weekly Tests & Insights",
-    description: "Comprehensive weekly tests with a leader dashboard to track progress, identify strengths, and focus on areas needing improvement.",
+    title: "Weekly Tests & AI-Driven Performance Insights",
+    description: "Comprehensive weekly tests with a leader dashboard powered by AI to track progress, identify strengths, and focus on areas needing improvement.",
     video: "/vid2.mp4",
     gradient: "bg-linear-to-r from-lime-200 via-green-400 to-emerald-600",
     tagColor: "bg-[#000000FF]/10 text-[#000000FF]",
@@ -32,7 +32,7 @@ const sections = [
   },
   {
     tag: "Expert Guidance",
-    title: "Tutoring & Community Support",
+    title: "Expert Tutoring & Community Support",
     description: "Personalized tutor support for revising weak concepts, along with a collaborative student community for grade-based discussions and doubt-solving.",
     video: "/vid1.mp4",
     gradient: "bg-linear-to-r from-red-200 via-pink-400 to-rose-600",
