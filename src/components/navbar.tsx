@@ -22,7 +22,7 @@ const Navbar = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/how-it-works", label: "How It Works" },
+    { href: "/how-it-works", label: "How It Works?" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -46,7 +46,7 @@ const Navbar = () => {
               href="/"
               className="text-xl uppercase font-semibold bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent hover:from-gray-600 hover:to-gray-800 transition-all duration-300"
             >
-              Grade Next
+              GradeNext
             </Link>
           </motion.div>
 

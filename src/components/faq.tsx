@@ -5,7 +5,7 @@ import { Sparkles, Triangle, Square, Circle, Hexagon, Star } from "lucide-react"
 
 const faqs = [
   {
-    question: "How does Grade Next personalize learning?",
+    question: "How does GradeNext personalize learning?",
     answer:
       "Our platform adapts to each student's strengths and weaknesses, providing tailored lessons, revision-based practice, and interactive exercises to enhance understanding and retention.",
     gradient: "from-blue-500 to-indigo-600",

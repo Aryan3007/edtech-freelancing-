@@ -76,7 +76,7 @@ const features = [
 const companies = [
   {
     id: "gradeNext",
-    name: "Grade Next",
+    name: "GradeNext",
     color: "from-emerald-500 to-teal-600",
     lightColor: "from-emerald-50 to-teal-50",
   },

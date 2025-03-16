@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="bg-[#a2d2ff] rounded-3xl p-8 text-black">
             <div className="flex items-center mb-6">
               
-              <span className="text-xl font-semibold">Grade Next – Smarter Learning, Better Results!</span>
+              <span className="text-xl font-semibold">GradeNext – Smarter Learning, Better Results!</span>
             </div>
             <p className="text-sm mb-8 opacity-90">
             Empowering Learners Worldwide – Anytime, Anywhere. Need Help? We&apos;re Just a Click Away!

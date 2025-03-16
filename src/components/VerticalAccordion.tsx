@@ -130,7 +130,7 @@ const VerticalAccordionWithPopup = () => {
 
   return (
     <>
-        <h1 className="pt-12 lg:pt-32 pb-12 text-4xl font-bold text-center">The Grade Next Programme</h1>
+        <h1 className="pt-12 lg:pt-32 pb-12 text-4xl font-bold text-center">The GradeNext Programme</h1>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 justify-center min-h-screen p-2">
         {items.map((item) => (
           <div

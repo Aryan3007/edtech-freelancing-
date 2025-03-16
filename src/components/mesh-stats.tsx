@@ -6,7 +6,7 @@ import { Sparkles, TrendingUp, Users, Target, BarChart3, Goal, Star, Zap } from 
 
 const stats = {
   before: {
-    title: "Before Grade Next:",
+    title: "Before GradeNext:",
     mainStat: "5-10%",
     subStats: [
       { label: "High Performers Across the Organization", value: "5-10%", icon: TrendingUp },
@@ -20,7 +20,7 @@ const stats = {
     bgGradient: "from-rose-50 to-orange-50",
   },
   after: {
-    title: "After Grade Next",
+    title: "After GradeNext",
     mainStat: "10-20%",
     subStats: [
       { label: "High Performers Across the Organization", value: "10-20%", icon: TrendingUp },
@@ -220,7 +220,7 @@ export default function MeshStats() {
                 }`}
               >
                 <Zap className="h-5 lg:flex hidden w-5" />
-                Before Grade Next
+                Before GradeNext
               </button>
               <button
                 onClick={() => setActiveState("after")}
@@ -229,7 +229,7 @@ export default function MeshStats() {
                 }`}
               >
                 <Star className="h-5 lg:flex hidden w-5" />
-                After Grade Next
+                After GradeNext
               </button>
             </div>
           </motion.div>
