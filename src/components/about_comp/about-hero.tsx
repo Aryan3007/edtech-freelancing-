@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100vh]  flex items-center justify-center overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700">
         {/* Animated shapes */}
@@ -110,28 +110,29 @@ export default function AboutHero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-6 mb-12"
-        >
-          {[
-            { label: "Years of Experience", value: "10+" },
-            { label: "Students Worldwide", value: "50k+" },
-            { label: "Satisfaction Rate", value: "98%" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl p-4 min-w-[150px]"
-            >
-              <span className="text-3xl font-bold text-white mb-1">{stat.value}</span>
-              <span className="text-sm text-white/80">{stat.label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.3 }}
+  className="grid grid-cols-3 max-w-xl mx-auto gap-4 sm:gap-6 mb-12"
+>
+  {[
+    { label: "Years of Experience", value: "10+" },
+    { label: "Students Worldwide", value: "50k+" },
+    { label: "Satisfaction Rate", value: "98%" },
+  ].map((stat, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+      className="flex flex-col items-center bg-white/10 backdrop-blur-md rounded-xl p-3 min-w-[100px] sm:min-w-[120px]"
+    >
+      <span className="text-2xl font-bold text-white mb-1">{stat.value}</span>
+      <span className="text-xs text-white/80">{stat.label}</span>
+    </motion.div>
+  ))}
+</motion.div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
