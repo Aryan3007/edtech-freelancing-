@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export default function ContactCTA() {
+export default function HowItWorksCTA() {
   return (
-    <section className="py-20 bg-gradient-to-r from-violet-500 to-purple-600 text-white">
+    <section className="py-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -26,8 +26,8 @@ export default function ContactCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-xl mb-8 max-w-2xl mx-auto"
           >
-            Join thousands of educators and students who are already benefiting from our innovative platform. Contact us
-            today to learn how we can help you achieve your educational goals.
+            Join thousands of educators and students who are already benefiting from our innovative platform. Get
+            started today and see the difference our technology can make.
           </motion.p>
 
           <motion.div
@@ -39,19 +39,21 @@ export default function ContactCTA() {
           >
             <Button
               size="lg"
-              className="relative overflow-hidden rounded-full bg-white text-violet-600 px-8 py-6 text-lg shadow-lg transition-all duration-300 hover:bg-gray-100"
+              className="relative overflow-hidden rounded-full bg-white text-blue-600 px-8 py-6 text-lg shadow-lg transition-all duration-300 hover:bg-gray-100 group"
             >
-              Schedule a Demo
+              <span className="relative z-10 flex items-center">
+                Get Started Now
+                <motion.span className="ml-2" initial={{ x: 0 }} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <ArrowRight className="h-5 w-5" />
+                </motion.span>
+              </span>
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="rounded-full border-2 border-white/70 text-black hover:text-white hover:bg-white/10 px-8 py-6 text-lg"
             >
-              <span className="flex items-center">
-                Contact Us
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </span>
+              Schedule a Demo
             </Button>
           </motion.div>
         </div>

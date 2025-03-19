@@ -4,6 +4,7 @@ import JourneyTimeline from "@/components/about_comp/journey-timeline"
 import MissionSection from "@/components/about_comp/mission-section"
 import TeamSection from "@/components/about_comp/team-section"
 import ValuesSection from "@/components/about_comp/values-section"
+import Footer from "@/components/footer"
 
 
 export const metadata = {
@@ -13,7 +14,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="overflow-hidden max-w-7xl mx-auto">
+    <main className="overflow-hidden  mx-auto">
       <AboutHero />
       <MissionSection />
       <ValuesSection />
@@ -21,6 +22,7 @@ export default function AboutPage() {
       <TeamSection />
     
       <ContactCTA />
+      <Footer/>
     </main>
   )
 }

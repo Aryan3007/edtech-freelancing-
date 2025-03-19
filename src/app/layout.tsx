@@ -1,14 +1,14 @@
 import type React from "react"
+import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
-import Navbar from "@/components/navbar"
+import MainNavbar from "@/components/main-navbar"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Your Company Name",
-  description: "Your company description",
+  title: "EdTech Platform",
+  description: "Innovative educational technology platform for modern learning",
 }
 
 export default function RootLayout({
@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main className="">{children}</main>
+          <MainNavbar />
+          {children}
       </body>
     </html>
   )
