@@ -107,7 +107,7 @@ export default function TestimonialsCarousel() {
                         />
                       ))}
                     </div>
-                    <p className="text-xl md:text-2xl text-gray-700 mb-6 italic">"{testimonials[current].quote}"</p>
+                    <p className="text-xl md:text-2xl text-gray-700 mb-6 italic">&quot;{testimonials[current].quote}&quot;</p>
                     <div>
                       <h4 className="text-lg font-bold">{testimonials[current].name}</h4>
                       <p className="text-indigo-600">{testimonials[current].title}</p>

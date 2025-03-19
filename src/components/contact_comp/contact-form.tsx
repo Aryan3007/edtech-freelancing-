@@ -39,7 +39,7 @@ export default function ContactForm() {
               Send Us a Message
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Fill out the form below and our team will get back to you within 24 hours. We're excited to hear from you
+              Fill out the form below and our team will get back to you within 24 hours. We&apos;re excited to hear from you
               and learn how we can help transform your educational experience.
             </p>
 

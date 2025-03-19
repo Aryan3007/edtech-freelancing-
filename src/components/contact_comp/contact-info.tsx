@@ -56,7 +56,7 @@ export default function ContactInfo() {
             Connect With Us
           </h2>
           <p className="text-lg text-gray-600">
-            We're here to help! Reach out to us through any of these channels and we'll respond as quickly as possible.
+            We&apos;re here to help! Reach out to us through any of these channels and we&apos;ll respond as quickly as possible.
           </p>
         </motion.div>
 

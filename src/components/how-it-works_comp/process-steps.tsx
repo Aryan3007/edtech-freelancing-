@@ -81,7 +81,7 @@ export default function ProcessSteps() {
             Our Simple 4-Step Process
           </h2>
           <p className="text-lg text-gray-600">
-            We've designed a streamlined process to help you implement our educational technology platform quickly and
+            We&apos;ve designed a streamlined process to help you implement our educational technology platform quickly and
             effectively.
           </p>
         </motion.div>
