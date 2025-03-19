@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ContactCTA() {
   return (
-    <section className="py-20 bg-gradient-to-r from-violet-500 to-purple-600 text-white">
+    <section className="py-20 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
@@ -39,14 +39,14 @@ export default function ContactCTA() {
           >
             <Button
               size="lg"
-              className="relative overflow-hidden rounded-full bg-white text-violet-600 px-8 py-6 text-lg shadow-lg transition-all duration-300 hover:bg-gray-100"
+              className="relative overflow-hidden rounded-full bg-white text-emerald-600 px-8 py-6 text-lg shadow-lg transition-all duration-300 hover:bg-gray-100"
             >
               Schedule a Demo
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full border-2 border-white/70 text-black hover:text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="rounded-full border-2 text-black border-white/70 hover:text-white hover:bg-white/10 px-8 py-6 text-lg"
             >
               <span className="flex items-center">
                 Contact Us

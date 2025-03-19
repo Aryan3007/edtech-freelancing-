@@ -10,7 +10,7 @@ export default function MissionSection() {
   }
 
   return (
-    <section className="bg-white py-20">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -20,7 +20,9 @@ export default function MissionSection() {
           variants={fadeIn}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission & Vision</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-600">
+            Our Mission & Vision
+          </h2>
           <p className="text-lg text-gray-600">
             We&apos;re dedicated to revolutionizing education through technology, making learning more accessible,
             personalized, and effective for students of all ages and backgrounds.
@@ -34,10 +36,10 @@ export default function MissionSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
             variants={fadeIn}
-            className="bg-violet-50 rounded-xl p-8"
+            className="bg-emerald-50 rounded-xl p-8"
           >
-            <div className="w-14 h-14 bg-violet-100 rounded-lg flex items-center justify-center mb-6">
-              <Target className="w-7 h-7 text-violet-600" />
+            <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+              <Target className="w-7 h-7 text-emerald-600" />
             </div>
             <h3 className="text-xl font-bold mb-4">Our Mission</h3>
             <p className="text-gray-600">
@@ -52,10 +54,10 @@ export default function MissionSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
             variants={fadeIn}
-            className="bg-emerald-50 rounded-xl p-8"
+            className="bg-teal-50 rounded-xl p-8"
           >
-            <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
-              <Lightbulb className="w-7 h-7 text-emerald-600" />
+            <div className="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+              <Lightbulb className="w-7 h-7 text-teal-600" />
             </div>
             <h3 className="text-xl font-bold mb-4">Our Vision</h3>
             <p className="text-gray-600">
@@ -70,10 +72,10 @@ export default function MissionSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
             variants={fadeIn}
-            className="bg-amber-50 rounded-xl p-8"
+            className="bg-cyan-50 rounded-xl p-8"
           >
-            <div className="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-              <Users className="w-7 h-7 text-amber-600" />
+            <div className="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+              <Users className="w-7 h-7 text-cyan-600" />
             </div>
             <h3 className="text-xl font-bold mb-4">Our Approach</h3>
             <p className="text-gray-600">
